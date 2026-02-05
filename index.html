@@ -18,457 +18,296 @@
   <p style="margin-bottom:1.5rem; font-size:.9rem; color:#555;">
     Each card summarises a prospect identified through Harvard alumni networks, accelerator cohort lists, and public databases.
     Click <strong>View Details</strong> for the full one-page breakdown required by the assignment.
-    <br><br>
-    <strong>Note:</strong> Yellow caution boxes on detail pages indicate prospects that may conflict with assignment sourcing rules (i-Labs, high-profile competitions, etc.).
   </p>
 
-  <h2 style="margin:2rem 0 1rem; color:#a51c30; font-size:1.2rem; border-bottom:2px solid #a51c30; padding-bottom:.5rem;">Digital Health (14 Prospects)</h2>
-
-  <div class="card-grid">
-
-    <!-- 1 -->
-    <div class="card">
-      <span class="badge health">Digital Health</span>
-      <h2>1. Sporo Health</h2>
-      <p class="founder">Kimon-Aristotelis Vogt &amp; Sonu Kumar</p>
-      <p class="affiliation">Harvard SEAS / Harvard Medical School</p>
-      <p class="source">Launch Lab X GEO</p>
-      <p class="summary">AI-powered clinical scribe and copilot platform that automates medical documentation.</p>
-      <div class="card-footer">
-        <span class="stage">Seed &bull; ~$1.1 M</span>
-        <a href="01-sporo-health.html" class="btn">View Details &rarr;</a>
-      </div>
+  <!-- Filter Controls -->
+  <div class="filter-bar">
+    <h4>View By</h4>
+    <div class="filter-row">
+      <button class="filter-btn active" data-view="source">Source</button>
+      <button class="filter-btn" data-view="category">Category</button>
     </div>
 
-    <!-- 2 -->
-    <div class="card">
-      <span class="badge health">Digital Health</span>
-      <h2>2. Kedi Labs</h2>
-      <p class="founder">Michelle Frye, DVM, SM</p>
-      <p class="affiliation">Harvard T.H. Chan School of Public Health '99</p>
-      <p class="source">HAE Accelerator 2024</p>
-      <p class="summary">At-home pet diagnostic kits using rapid-test and molecular PCR technology.</p>
-      <div class="card-footer">
-        <span class="stage">Pre-Seed &bull; HAE 2024</span>
-        <a href="02-kedi-labs.html" class="btn">View Details &rarr;</a>
-      </div>
+    <h4 style="margin-top:1rem;">Filter by Category</h4>
+    <div class="filter-row" id="category-filters">
+      <button class="filter-btn category-all active" data-category="all">All</button>
+      <button class="filter-btn category-health" data-category="health">Digital Health</button>
+      <button class="filter-btn category-education" data-category="education">Education</button>
+      <button class="filter-btn category-other" data-category="other">Other Verticals</button>
     </div>
 
-    <!-- 3 -->
-    <div class="card">
-      <span class="badge health">Digital Health</span>
-      <h2>3. PathCision Medicine</h2>
-      <p class="founder">David Lee, MD PhD &amp; Shana Wang</p>
-      <p class="affiliation">Harvard Medical School</p>
-      <p class="source">Harvard Ventures Database</p>
-      <p class="summary">Next-generation antibody-drug conjugate platform using ML to target cancer.</p>
-      <div class="card-footer">
-        <span class="stage">Seed &bull; $800 K</span>
-        <a href="03-pathcision.html" class="btn">View Details &rarr;</a>
+    <div class="toggle-section">
+      <h4>Exclude Sources (default: excluded per assignment rules)</h4>
+      <div class="toggle-row">
+        <label class="toggle-item">
+          <input type="checkbox" id="exclude-ilabs" checked>
+          Harvard Innovation Labs
+        </label>
+        <label class="toggle-item">
+          <input type="checkbox" id="exclude-hae" checked>
+          HAE Accelerator
+        </label>
+        <label class="toggle-item">
+          <input type="checkbox" id="exclude-hvd" checked>
+          Harvard Ventures Database
+        </label>
       </div>
     </div>
+  </div>
 
-    <!-- 4 -->
-    <div class="card">
-      <span class="badge health">Digital Health</span>
-      <h2>4. InConfidence</h2>
-      <p class="founder">Nicky Agahari</p>
-      <p class="affiliation">Harvard Innovation Labs Fellow</p>
-      <p class="source">Harvard Innovation Labs</p>
-      <p class="summary">Smart-patch wearable delivering at-home nerve stimulation for incontinence.</p>
-      <div class="card-footer">
-        <span class="stage">Pre-Seed &bull; $750 K grant</span>
-        <a href="04-inconfidence.html" class="btn">View Details &rarr;</a>
-      </div>
-    </div>
+  <div class="results-count" id="results-count"></div>
 
-    <!-- 5 -->
-    <div class="card">
-      <span class="badge health">Digital Health</span>
-      <h2>5. Qalam Health Solutions</h2>
-      <p class="founder">Haitham Shoman, MD PhD</p>
-      <p class="affiliation">Harvard T.H. Chan School of Public Health</p>
-      <p class="source">Harvard Ventures Database</p>
-      <p class="summary">Intraoperative cancer-detection device for bone cancer cells during surgery.</p>
-      <div class="card-footer">
-        <span class="stage">Pre-Seed &bull; Grant-funded</span>
-        <a href="05-qalam-health.html" class="btn">View Details &rarr;</a>
-      </div>
-    </div>
+  <div class="card-grid" id="card-grid"></div>
 
-    <!-- 6 -->
-    <div class="card">
-      <span class="badge health">Digital Health</span>
-      <h2>6. Fiduciary in a Box</h2>
-      <p class="founder">Jed Cohen</p>
-      <p class="affiliation">Harvard College</p>
-      <p class="source">HAE Accelerator 2024</p>
-      <p class="summary">SaaS platform for health-plan fiduciary compliance under federal law.</p>
-      <div class="card-footer">
-        <span class="stage">Pre-Seed &bull; HAE 2024</span>
-        <a href="06-fiduciary-in-a-box.html" class="btn">View Details &rarr;</a>
-      </div>
-    </div>
-
-    <!-- 7 -->
-    <div class="card">
-      <span class="badge health">Digital Health</span>
-      <h2>7. Lexi</h2>
-      <p class="founder">Linh Pham &amp; Siddharth UR</p>
-      <p class="affiliation">Harvard Design Engineering</p>
-      <p class="source">Harvard News / Multiple Awards</p>
-      <p class="summary">Real-time AI voice-to-voice medical interpretation for 30M LEP patients.</p>
-      <div class="card-footer">
-        <span class="stage">Pre-Seed &bull; Multiple awards</span>
-        <a href="07-lexi.html" class="btn">View Details &rarr;</a>
-      </div>
-    </div>
-
-    <!-- 11 -->
-    <div class="card">
-      <span class="badge health">Digital Health</span>
-      <h2>11. Trans Health HQ</h2>
-      <p class="founder">Ivan Hsiao, MPH</p>
-      <p class="affiliation">Harvard T.H. Chan School of Public Health '24</p>
-      <p class="source">Harvard Chan Innovation Fund</p>
-      <p class="summary">Clinical resource platform helping clinicians provide gender-affirming care.</p>
-      <div class="card-footer">
-        <span class="stage">Pre-Seed &bull; Grant-funded</span>
-        <a href="11-trans-health-hq.html" class="btn">View Details &rarr;</a>
-      </div>
-    </div>
-
-    <!-- 12 -->
-    <div class="card">
-      <span class="badge health">Digital Health</span>
-      <h2>12. Meomind</h2>
-      <p class="founder">Sushant Gupta</p>
-      <p class="affiliation">Harvard Business School</p>
-      <p class="source">Harvard Alumni Database</p>
-      <p class="summary">On-demand recorded therapy sessions and mental health tools for enterprise.</p>
-      <div class="card-footer">
-        <span class="stage">Seed &bull; $1 M</span>
-        <a href="12-meomind.html" class="btn">View Details &rarr;</a>
-      </div>
-    </div>
-
-    <!-- 14 -->
-    <div class="card">
-      <span class="badge health">Digital Health</span>
-      <h2>14. Koroid</h2>
-      <p class="founder">Carl Gustaf Axelsson, MD</p>
-      <p class="affiliation">Harvard Medical School / HBS</p>
-      <p class="source">LinkedIn / Harvard Alumni Network</p>
-      <p class="summary">AI-powered healthcare workforce management and optimization platform.</p>
-      <div class="card-footer">
-        <span class="stage">Early Stage &bull; MGH pilot</span>
-        <a href="14-koroid.html" class="btn">View Details &rarr;</a>
-      </div>
-    </div>
-
-    <!-- 20 -->
-    <div class="card">
-      <span class="badge health">Digital Health</span>
-      <h2>20. Health Tech Without Borders</h2>
-      <p class="founder">Dr. Jarone Lee, MD MPH</p>
-      <p class="affiliation">Harvard Medical School / MGH Faculty</p>
-      <p class="source">Harvard Gazette / Crisis Response</p>
-      <p class="summary">Humanitarian telehealth providing support in crisis regions.</p>
-      <div class="card-footer">
-        <span class="stage">Nonprofit &bull; 65K+ patients</span>
-        <a href="20-health-tech-without-borders.html" class="btn">View Details &rarr;</a>
-      </div>
-    </div>
-
-    <!-- 24 -->
-    <div class="card">
-      <span class="badge health">Digital Health</span>
-      <h2>24. Aperture Bio</h2>
-      <p class="founder">HBS Alumni Team</p>
-      <p class="affiliation">Harvard Business School</p>
-      <p class="source">Harvard Alumni Database</p>
-      <p class="summary">Single-cell proteomics for rapid biomarker analysis and tumor mapping.</p>
-      <div class="card-footer">
-        <span class="stage">Early Stage</span>
-        <a href="24-aperture-bio.html" class="btn">View Details &rarr;</a>
-      </div>
-    </div>
-
-    <!-- 25 -->
-    <div class="card">
-      <span class="badge health">Digital Health</span>
-      <h2>25. Y-Health Corp</h2>
-      <p class="founder">Michael Spano Jr.</p>
-      <p class="affiliation">Harvard Psychology Research Fellow</p>
-      <p class="source">PIC Competition (Semifinalist)</p>
-      <p class="summary">Behavioral health resource navigation platform for crisis teams.</p>
-      <div class="card-footer">
-        <span class="stage">Early Stage &bull; PIC Semifinalist</span>
-        <a href="25-y-health-corp.html" class="btn">View Details &rarr;</a>
-      </div>
-    </div>
-
-    <!-- 26 -->
-    <div class="card">
-      <span class="badge health">Digital Health</span>
-      <h2>26. CartaBio</h2>
-      <p class="founder">HMS Research Team</p>
-      <p class="affiliation">Harvard Medical School</p>
-      <p class="source">Harvard Alumni Database</p>
-      <p class="summary">Spatial biology and AI platform for decoding novel disease biology.</p>
-      <div class="card-footer">
-        <span class="stage">Early Stage</span>
-        <a href="26-cartabio.html" class="btn">View Details &rarr;</a>
-      </div>
-    </div>
-
-  </div><!-- /card-grid health -->
-
-  <h2 style="margin:2rem 0 1rem; color:#1565c0; font-size:1.2rem; border-bottom:2px solid #1565c0; padding-bottom:.5rem;">Education (12 Prospects)</h2>
-
-  <div class="card-grid">
-
-    <!-- 8 -->
-    <div class="card">
-      <span class="badge education">Education</span>
-      <h2>8. SkillSeek</h2>
-      <p class="founder">Priya Malhotra</p>
-      <p class="affiliation">Harvard GSE '22</p>
-      <p class="source">HGSE Entrepreneurship Alumni</p>
-      <p class="summary">Workforce bootcamp training HVAC technicians for clean-energy transition.</p>
-      <div class="card-footer">
-        <span class="stage">Pre-Seed &bull; Pilot stage</span>
-        <a href="08-skillseek.html" class="btn">View Details &rarr;</a>
-      </div>
-    </div>
-
-    <!-- 9 -->
-    <div class="card">
-      <span class="badge education">Education</span>
-      <h2>9. Games for Ed</h2>
-      <p class="founder">Mridula Chalamalasetti</p>
-      <p class="affiliation">Harvard GSE '25</p>
-      <p class="source">Mittal Institute Grant</p>
-      <p class="summary">Low-tech board &amp; card games aligned to India's K-12 curriculum.</p>
-      <div class="card-footer">
-        <span class="stage">Pre-Seed &bull; $5 K Mittal grant</span>
-        <a href="09-games-for-ed.html" class="btn">View Details &rarr;</a>
-      </div>
-    </div>
-
-    <!-- 10 -->
-    <div class="card">
-      <span class="badge education">Education</span>
-      <h2>10. Aimiable</h2>
-      <p class="founder">Olga Gomonova</p>
-      <p class="affiliation">Harvard Business School MBA</p>
-      <p class="source">HAE Accelerator 2024</p>
-      <p class="summary">AI workforce engagement SaaS for customer-support team scheduling.</p>
-      <div class="card-footer">
-        <span class="stage">Pre-Seed &bull; HAE 2024</span>
-        <a href="10-aimiable.html" class="btn">View Details &rarr;</a>
-      </div>
-    </div>
-
-    <!-- 13 -->
-    <div class="card">
-      <span class="badge education">Education</span>
-      <h2>13. GoTeacher</h2>
-      <p class="founder">Dean Celaj</p>
-      <p class="affiliation">Harvard GSE</p>
-      <p class="source">EdTech Search / HGSE Alumni</p>
-      <p class="summary">AI-powered lesson planning and content aggregation for teachers.</p>
-      <div class="card-footer">
-        <span class="stage">Pre-Seed</span>
-        <a href="13-goteacher.html" class="btn">View Details &rarr;</a>
-      </div>
-    </div>
-
-    <!-- 15 -->
-    <div class="card">
-      <span class="badge education">Education</span>
-      <h2>15. Beyond Education</h2>
-      <p class="founder">Michaela Horvathova</p>
-      <p class="affiliation">Harvard GSE (M.Ed.)</p>
-      <p class="source">Echoing Green Fellow</p>
-      <p class="summary">Soft skills assessment and teacher development platform in 13+ countries.</p>
-      <div class="card-footer">
-        <span class="stage">Seed &bull; 100K+ students</span>
-        <a href="15-beyond-education.html" class="btn">View Details &rarr;</a>
-      </div>
-    </div>
-
-    <!-- 16 -->
-    <div class="card">
-      <span class="badge education">Education</span>
-      <h2>16. SOWCoders</h2>
-      <p class="founder">Kavya Krishna</p>
-      <p class="affiliation">Harvard GSE '24</p>
-      <p class="source">HGSE Alumni Network</p>
-      <p class="summary">Digital literacy and coding training for girls in 57 countries.</p>
-      <div class="card-footer">
-        <span class="stage">Nonprofit &bull; 4K+ girls trained</span>
-        <a href="16-sowcoders.html" class="btn">View Details &rarr;</a>
-      </div>
-    </div>
-
-    <!-- 17 -->
-    <div class="card">
-      <span class="badge education">Education</span>
-      <h2>17. Inqui-Lab Foundation</h2>
-      <p class="founder">Eshwar Bandi</p>
-      <p class="affiliation">Harvard GSE '23</p>
-      <p class="source">HGSE Alumni Network</p>
-      <p class="summary">Problem-solving and innovation education for first-gen learners in India.</p>
-      <div class="card-footer">
-        <span class="stage">Nonprofit &bull; 30+ schools</span>
-        <a href="17-inqui-lab.html" class="btn">View Details &rarr;</a>
-      </div>
-    </div>
-
-    <!-- 18 -->
-    <div class="card">
-      <span class="badge education">Education</span>
-      <h2>18. Mind Brain Emotion</h2>
-      <p class="founder">Dr. Jenny Woo</p>
-      <p class="affiliation">Harvard M.Ed.</p>
-      <p class="source">Harvard Alumni Success Stories</p>
-      <p class="summary">EQ skill-building card games generating $1.7M+ revenue on Amazon.</p>
-      <div class="card-footer">
-        <span class="stage">Bootstrapped &bull; $1.71M rev</span>
-        <a href="18-mind-brain-emotion.html" class="btn">View Details &rarr;</a>
-      </div>
-    </div>
-
-    <!-- 19 -->
-    <div class="card">
-      <span class="badge education">Education</span>
-      <h2>19. Archslate</h2>
-      <p class="founder">Vaishnavi More</p>
-      <p class="affiliation">Harvard GSD</p>
-      <p class="source">Harvard GSD Alumni Network</p>
-      <p class="summary">AI-driven hiring platform for architecture and construction workforce.</p>
-      <div class="card-footer">
-        <span class="stage">Pre-Seed &bull; $700K raised</span>
-        <a href="19-archslate.html" class="btn">View Details &rarr;</a>
-      </div>
-    </div>
-
-    <!-- 21 -->
-    <div class="card">
-      <span class="badge education">Education</span>
-      <h2>21. Sugarwork</h2>
-      <p class="founder">Vanessa Liu</p>
-      <p class="affiliation">Harvard College / HLS</p>
-      <p class="source">HAE Accelerator 2024</p>
-      <p class="summary">Enterprise knowledge transfer platform using AI to capture tacit knowledge.</p>
-      <div class="card-footer">
-        <span class="stage">Early Stage &bull; HAE 2024</span>
-        <a href="21-sugarwork.html" class="btn">View Details &rarr;</a>
-      </div>
-    </div>
-
-    <!-- 22 -->
-    <div class="card">
-      <span class="badge education">Education</span>
-      <h2>22. Indian School of Democracy</h2>
-      <p class="founder">Hemakshi Meghani</p>
-      <p class="affiliation">Harvard Kennedy School</p>
-      <p class="source">Echoing Green Fellow</p>
-      <p class="summary">Leadership training for aspiring political leaders in India.</p>
-      <div class="card-footer">
-        <span class="stage">Nonprofit &bull; Echoing Green Fellow</span>
-        <a href="22-indian-school-democracy.html" class="btn">View Details &rarr;</a>
-      </div>
-    </div>
-
-    <!-- 23 -->
-    <div class="card">
-      <span class="badge education">Education</span>
-      <h2>23. How to Change the World</h2>
-      <p class="founder">HKS Alumni Team</p>
-      <p class="affiliation">Harvard Kennedy School</p>
-      <p class="source">Harvard Alumni Database</p>
-      <p class="summary">Skills-based higher education for tackling global challenges.</p>
-      <div class="card-footer">
-        <span class="stage">Early Stage</span>
-        <a href="23-how-to-change-world.html" class="btn">View Details &rarr;</a>
-      </div>
-    </div>
-
-  </div><!-- /card-grid education -->
-
-  <h2 style="margin:2rem 0 1rem; color:#666; font-size:1.2rem; border-bottom:2px solid #666; padding-bottom:.5rem;">Other Verticals — HAE 2024 Cohort (4 Prospects)</h2>
-
-  <p style="margin-bottom:1rem; font-size:.85rem; color:#888;">
-    These prospects are from the HAE Accelerator 2024 cohort but are NOT in Digital Health or Education verticals. Included for completeness but may not meet assignment criteria.
-  </p>
-
-  <div class="card-grid">
-
-    <!-- 27 -->
-    <div class="card">
-      <span class="badge" style="background:#f5f5f5; color:#666;">Deep Tech</span>
-      <h2>27. GuardianSat</h2>
-      <p class="founder">Christopher Rohe</p>
-      <p class="affiliation">Harvard Kennedy School</p>
-      <p class="source">HAE Accelerator 2024 (Demo Day Winner)</p>
-      <p class="summary">Space debris management in Geostationary Earth Orbit.</p>
-      <div class="card-footer">
-        <span class="stage">Pre-Seed &bull; HAE Demo Day Winner</span>
-        <a href="27-guardiansat.html" class="btn">View Details &rarr;</a>
-      </div>
-    </div>
-
-    <!-- 28 -->
-    <div class="card">
-      <span class="badge" style="background:#f5f5f5; color:#666;">GovTech</span>
-      <h2>28. Inquisio</h2>
-      <p class="founder">Joshua Penner</p>
-      <p class="affiliation">Harvard Extension School</p>
-      <p class="source">HAE Accelerator 2024</p>
-      <p class="summary">Public records request platform for local governments.</p>
-      <div class="card-footer">
-        <span class="stage">Pre-Seed &bull; HAE 2024</span>
-        <a href="28-inquisio.html" class="btn">View Details &rarr;</a>
-      </div>
-    </div>
-
-    <!-- 29 -->
-    <div class="card">
-      <span class="badge" style="background:#f5f5f5; color:#666;">Sports/Fintech</span>
-      <h2>29. FanEQT</h2>
-      <p class="founder">Usman Shuja</p>
-      <p class="affiliation">Harvard Kennedy School</p>
-      <p class="source">HAE Accelerator 2024</p>
-      <p class="summary">Sports asset monetization and stadium fractional ownership marketplace.</p>
-      <div class="card-footer">
-        <span class="stage">Pre-Seed &bull; HAE 2024</span>
-        <a href="29-faneqt.html" class="btn">View Details &rarr;</a>
-      </div>
-    </div>
-
-    <!-- 30 -->
-    <div class="card">
-      <span class="badge" style="background:#f5f5f5; color:#666;">Construction Tech</span>
-      <h2>30. Platform</h2>
-      <p class="founder">Adrian Washington</p>
-      <p class="affiliation">Harvard (HAE Cohort)</p>
-      <p class="source">HAE Accelerator 2024</p>
-      <p class="summary">Revolutionizing construction with the Platform Method™.</p>
-      <div class="card-footer">
-        <span class="stage">Pre-Seed &bull; HAE 2024</span>
-        <a href="30-platform-method.html" class="btn">View Details &rarr;</a>
-      </div>
-    </div>
-
-  </div><!-- /card-grid other -->
+  <div class="pagination" id="pagination"></div>
 
 </div><!-- /container -->
 
 <footer style="text-align:center; padding:2rem; background:#1c1c1c; color:#888; font-size:.8rem; margin-top:3rem;">
   HUCP Final Round Deliverable Research &bull; Spring 2026 &bull; 30 Startup Prospects
 </footer>
+
+<script>
+// Prospect data
+const prospects = [
+  { id: 1, name: "Sporo Health", founder: "Kimon-Aristotelis Vogt & Sonu Kumar", affiliation: "Harvard SEAS / Harvard Medical School", source: "Launch Lab X GEO", sourceKey: "ilabs", category: "health", summary: "AI-powered clinical scribe and copilot platform that automates medical documentation.", stage: "Seed • ~$1.1 M", link: "01-sporo-health.html" },
+  { id: 2, name: "Kedi Labs", founder: "Michelle Frye, DVM, SM", affiliation: "Harvard T.H. Chan School of Public Health '99", source: "HAE Accelerator 2024", sourceKey: "hae", category: "health", summary: "At-home pet diagnostic kits using rapid-test and molecular PCR technology.", stage: "Pre-Seed • HAE 2024", link: "02-kedi-labs.html" },
+  { id: 3, name: "PathCision Medicine", founder: "David Lee, MD PhD & Shana Wang", affiliation: "Harvard Medical School", source: "Harvard Ventures Database", sourceKey: "hvd", category: "health", summary: "Next-generation antibody-drug conjugate platform using ML to target cancer.", stage: "Seed • $800 K", link: "03-pathcision.html" },
+  { id: 4, name: "InConfidence", founder: "Nicky Agahari", affiliation: "Harvard Innovation Labs Fellow", source: "Harvard Innovation Labs", sourceKey: "ilabs", category: "health", summary: "Smart-patch wearable delivering at-home nerve stimulation for incontinence.", stage: "Pre-Seed • $750 K grant", link: "04-inconfidence.html" },
+  { id: 5, name: "Qalam Health Solutions", founder: "Haitham Shoman, MD PhD", affiliation: "Harvard T.H. Chan School of Public Health", source: "Harvard Ventures Database", sourceKey: "hvd", category: "health", summary: "Intraoperative cancer-detection device for bone cancer cells during surgery.", stage: "Pre-Seed • Grant-funded", link: "05-qalam-health.html" },
+  { id: 6, name: "Fiduciary in a Box", founder: "Jed Cohen", affiliation: "Harvard College", source: "HAE Accelerator 2024", sourceKey: "hae", category: "health", summary: "SaaS platform for health-plan fiduciary compliance under federal law.", stage: "Pre-Seed • HAE 2024", link: "06-fiduciary-in-a-box.html" },
+  { id: 7, name: "Lexi", founder: "Linh Pham & Siddharth UR", affiliation: "Harvard Design Engineering", source: "Harvard News / Multiple Awards", sourceKey: "other", category: "health", summary: "Real-time AI voice-to-voice medical interpretation for 30M LEP patients.", stage: "Pre-Seed • Multiple awards", link: "07-lexi.html" },
+  { id: 8, name: "SkillSeek", founder: "Priya Malhotra", affiliation: "Harvard GSE '22", source: "HGSE Entrepreneurship Alumni", sourceKey: "other", category: "education", summary: "Workforce bootcamp training HVAC technicians for clean-energy transition.", stage: "Pre-Seed • Pilot stage", link: "08-skillseek.html" },
+  { id: 9, name: "Games for Ed", founder: "Mridula Chalamalasetti", affiliation: "Harvard GSE '25", source: "Mittal Institute Grant", sourceKey: "other", category: "education", summary: "Low-tech board & card games aligned to India's K-12 curriculum.", stage: "Pre-Seed • $5 K Mittal grant", link: "09-games-for-ed.html" },
+  { id: 10, name: "Aimiable", founder: "Olga Gomonova", affiliation: "Harvard Business School MBA", source: "HAE Accelerator 2024", sourceKey: "hae", category: "education", summary: "AI workforce engagement SaaS for customer-support team scheduling.", stage: "Pre-Seed • HAE 2024", link: "10-aimiable.html" },
+  { id: 11, name: "Trans Health HQ", founder: "Ivan Hsiao, MPH", affiliation: "Harvard T.H. Chan School of Public Health '24", source: "Harvard Chan Innovation Fund", sourceKey: "other", category: "health", summary: "Clinical resource platform helping clinicians provide gender-affirming care.", stage: "Pre-Seed • Grant-funded", link: "11-trans-health-hq.html" },
+  { id: 12, name: "Meomind", founder: "Sushant Gupta", affiliation: "Harvard Business School", source: "Harvard Alumni Database", sourceKey: "hvd", category: "health", summary: "On-demand recorded therapy sessions and mental health tools for enterprise.", stage: "Seed • $1 M", link: "12-meomind.html" },
+  { id: 13, name: "GoTeacher", founder: "Dean Celaj", affiliation: "Harvard GSE", source: "EdTech Search / HGSE Alumni", sourceKey: "other", category: "education", summary: "AI-powered lesson planning and content aggregation for teachers.", stage: "Pre-Seed", link: "13-goteacher.html" },
+  { id: 14, name: "Koroid", founder: "Carl Gustaf Axelsson, MD", affiliation: "Harvard Medical School / HBS", source: "LinkedIn / Harvard Alumni Network", sourceKey: "other", category: "health", summary: "AI-powered healthcare workforce management and optimization platform.", stage: "Early Stage • MGH pilot", link: "14-koroid.html" },
+  { id: 15, name: "Beyond Education", founder: "Michaela Horvathova", affiliation: "Harvard GSE (M.Ed.)", source: "Echoing Green Fellow", sourceKey: "other", category: "education", summary: "Soft skills assessment and teacher development platform in 13+ countries.", stage: "Seed • 100K+ students", link: "15-beyond-education.html" },
+  { id: 16, name: "SOWCoders", founder: "Kavya Krishna", affiliation: "Harvard GSE '24", source: "HGSE Alumni Network", sourceKey: "other", category: "education", summary: "Digital literacy and coding training for girls in 57 countries.", stage: "Nonprofit • 4K+ girls trained", link: "16-sowcoders.html" },
+  { id: 17, name: "Inqui-Lab Foundation", founder: "Eshwar Bandi", affiliation: "Harvard GSE '23", source: "HGSE Alumni Network", sourceKey: "other", category: "education", summary: "Problem-solving and innovation education for first-gen learners in India.", stage: "Nonprofit • 30+ schools", link: "17-inqui-lab.html" },
+  { id: 18, name: "Mind Brain Emotion", founder: "Dr. Jenny Woo", affiliation: "Harvard M.Ed.", source: "Harvard Alumni Success Stories", sourceKey: "other", category: "education", summary: "EQ skill-building card games generating $1.7M+ revenue on Amazon.", stage: "Bootstrapped • $1.71M rev", link: "18-mind-brain-emotion.html" },
+  { id: 19, name: "Archslate", founder: "Vaishnavi More", affiliation: "Harvard GSD", source: "Harvard GSD Alumni Network", sourceKey: "other", category: "education", summary: "AI-driven hiring platform for architecture and construction workforce.", stage: "Pre-Seed • $700K raised", link: "19-archslate.html" },
+  { id: 20, name: "Health Tech Without Borders", founder: "Dr. Jarone Lee, MD MPH", affiliation: "Harvard Medical School / MGH Faculty", source: "Harvard Gazette / Crisis Response", sourceKey: "other", category: "health", summary: "Humanitarian telehealth providing support in crisis regions.", stage: "Nonprofit • 65K+ patients", link: "20-health-tech-without-borders.html" },
+  { id: 21, name: "Sugarwork", founder: "Vanessa Liu", affiliation: "Harvard College / HLS", source: "HAE Accelerator 2024", sourceKey: "hae", category: "education", summary: "Enterprise knowledge transfer platform using AI to capture tacit knowledge.", stage: "Early Stage • HAE 2024", link: "21-sugarwork.html" },
+  { id: 22, name: "Indian School of Democracy", founder: "Hemakshi Meghani", affiliation: "Harvard Kennedy School", source: "Echoing Green Fellow", sourceKey: "other", category: "education", summary: "Leadership training for aspiring political leaders in India.", stage: "Nonprofit • Echoing Green Fellow", link: "22-indian-school-democracy.html" },
+  { id: 23, name: "How to Change the World", founder: "HKS Alumni Team", affiliation: "Harvard Kennedy School", source: "Harvard Alumni Database", sourceKey: "hvd", category: "education", summary: "Skills-based higher education for tackling global challenges.", stage: "Early Stage", link: "23-how-to-change-world.html" },
+  { id: 24, name: "Aperture Bio", founder: "HBS Alumni Team", affiliation: "Harvard Business School", source: "Harvard Alumni Database", sourceKey: "hvd", category: "health", summary: "Single-cell proteomics for rapid biomarker analysis and tumor mapping.", stage: "Early Stage", link: "24-aperture-bio.html" },
+  { id: 25, name: "Y-Health Corp", founder: "Michael Spano Jr.", affiliation: "Harvard Psychology Research Fellow", source: "PIC Competition (Semifinalist)", sourceKey: "other", category: "health", summary: "Behavioral health resource navigation platform for crisis teams.", stage: "Early Stage • PIC Semifinalist", link: "25-y-health-corp.html" },
+  { id: 26, name: "CartaBio", founder: "HMS Research Team", affiliation: "Harvard Medical School", source: "Harvard Alumni Database", sourceKey: "hvd", category: "health", summary: "Spatial biology and AI platform for decoding novel disease biology.", stage: "Early Stage", link: "26-cartabio.html" },
+  { id: 27, name: "GuardianSat", founder: "Christopher Rohe", affiliation: "Harvard Kennedy School", source: "HAE Accelerator 2024 (Demo Day Winner)", sourceKey: "hae", category: "other", summary: "Space debris management in Geostationary Earth Orbit.", stage: "Pre-Seed • HAE Demo Day Winner", link: "27-guardiansat.html" },
+  { id: 28, name: "Inquisio", founder: "Joshua Penner", affiliation: "Harvard Extension School", source: "HAE Accelerator 2024", sourceKey: "hae", category: "other", summary: "Public records request platform for local governments.", stage: "Pre-Seed • HAE 2024", link: "28-inquisio.html" },
+  { id: 29, name: "FanEQT", founder: "Usman Shuja", affiliation: "Harvard Kennedy School", source: "HAE Accelerator 2024", sourceKey: "hae", category: "other", summary: "Sports asset monetization and stadium fractional ownership marketplace.", stage: "Pre-Seed • HAE 2024", link: "29-faneqt.html" },
+  { id: 30, name: "Platform", founder: "Adrian Washington", affiliation: "Harvard (HAE Cohort)", source: "HAE Accelerator 2024", sourceKey: "hae", category: "other", summary: "Revolutionizing construction with the Platform Method™.", stage: "Pre-Seed • HAE 2024", link: "30-platform-method.html" }
+];
+
+// State
+let currentView = 'source';
+let currentCategory = 'all';
+let currentPage = 1;
+const perPage = 25;
+
+// Get unique sources for grouping
+const sourceGroups = {
+  'HAE Accelerator': prospects.filter(p => p.sourceKey === 'hae'),
+  'Harvard Innovation Labs': prospects.filter(p => p.sourceKey === 'ilabs'),
+  'Harvard Ventures Database': prospects.filter(p => p.sourceKey === 'hvd'),
+  'Other Sources': prospects.filter(p => p.sourceKey === 'other')
+};
+
+const categoryLabels = {
+  health: 'Digital Health',
+  education: 'Education',
+  other: 'Other Verticals'
+};
+
+const badgeClasses = {
+  health: 'badge health',
+  education: 'badge education',
+  other: 'badge'
+};
+
+const badgeStyles = {
+  other: 'background:#f5f5f5; color:#666;'
+};
+
+// Filter prospects based on current settings
+function getFilteredProspects() {
+  const excludeILabs = document.getElementById('exclude-ilabs').checked;
+  const excludeHAE = document.getElementById('exclude-hae').checked;
+  const excludeHVD = document.getElementById('exclude-hvd').checked;
+
+  return prospects.filter(p => {
+    // Category filter
+    if (currentCategory !== 'all' && p.category !== currentCategory) return false;
+
+    // Source exclusions
+    if (excludeILabs && p.sourceKey === 'ilabs') return false;
+    if (excludeHAE && p.sourceKey === 'hae') return false;
+    if (excludeHVD && p.sourceKey === 'hvd') return false;
+
+    return true;
+  });
+}
+
+// Create card HTML
+function createCard(p) {
+  const badgeClass = badgeClasses[p.category] || 'badge';
+  const badgeStyle = badgeStyles[p.category] || '';
+  const categoryLabel = categoryLabels[p.category] || p.category;
+
+  return `
+    <div class="card" data-id="${p.id}" data-category="${p.category}" data-source="${p.sourceKey}">
+      <span class="${badgeClass}" ${badgeStyle ? `style="${badgeStyle}"` : ''}>${categoryLabel}</span>
+      <h2>${p.id}. ${p.name}</h2>
+      <p class="founder">${p.founder}</p>
+      <p class="affiliation">${p.affiliation}</p>
+      <p class="source">${p.source}</p>
+      <p class="summary">${p.summary}</p>
+      <div class="card-footer">
+        <span class="stage">${p.stage}</span>
+        <a href="${p.link}" class="btn">View Details &rarr;</a>
+      </div>
+    </div>
+  `;
+}
+
+// Render cards
+function render() {
+  const filtered = getFilteredProspects();
+  const totalPages = Math.ceil(filtered.length / perPage);
+
+  // Ensure current page is valid
+  if (currentPage > totalPages) currentPage = totalPages || 1;
+
+  const start = (currentPage - 1) * perPage;
+  const end = start + perPage;
+  const pageProspects = filtered.slice(start, end);
+
+  const grid = document.getElementById('card-grid');
+  const resultsCount = document.getElementById('results-count');
+
+  // Update results count
+  resultsCount.textContent = `Showing ${pageProspects.length} of ${filtered.length} prospects`;
+
+  // Render based on view mode
+  if (currentView === 'source') {
+    // Group by source
+    let html = '';
+    const sources = ['Other Sources', 'HAE Accelerator', 'Harvard Innovation Labs', 'Harvard Ventures Database'];
+
+    for (const sourceName of sources) {
+      const sourceProspects = pageProspects.filter(p => {
+        if (sourceName === 'HAE Accelerator') return p.sourceKey === 'hae';
+        if (sourceName === 'Harvard Innovation Labs') return p.sourceKey === 'ilabs';
+        if (sourceName === 'Harvard Ventures Database') return p.sourceKey === 'hvd';
+        return p.sourceKey === 'other';
+      });
+
+      if (sourceProspects.length > 0) {
+        html += `<h3 style="margin: 1.5rem 0 1rem; color: #666; font-size: 1rem; border-bottom: 1px solid #ddd; padding-bottom: .5rem;">${sourceName} (${sourceProspects.length})</h3>`;
+        html += '<div class="card-grid">';
+        sourceProspects.forEach(p => html += createCard(p));
+        html += '</div>';
+      }
+    }
+
+    grid.innerHTML = html || '<p style="color:#888;">No prospects match current filters.</p>';
+  } else {
+    // Group by category
+    let html = '';
+    const categories = ['health', 'education', 'other'];
+    const categoryNames = { health: 'Digital Health', education: 'Education', other: 'Other Verticals' };
+    const categoryColors = { health: '#a51c30', education: '#1565c0', other: '#666' };
+
+    for (const cat of categories) {
+      const catProspects = pageProspects.filter(p => p.category === cat);
+
+      if (catProspects.length > 0) {
+        html += `<h3 style="margin: 1.5rem 0 1rem; color: ${categoryColors[cat]}; font-size: 1rem; border-bottom: 2px solid ${categoryColors[cat]}; padding-bottom: .5rem;">${categoryNames[cat]} (${catProspects.length})</h3>`;
+        html += '<div class="card-grid">';
+        catProspects.forEach(p => html += createCard(p));
+        html += '</div>';
+      }
+    }
+
+    grid.innerHTML = html || '<p style="color:#888;">No prospects match current filters.</p>';
+  }
+
+  // Render pagination
+  renderPagination(totalPages);
+}
+
+// Render pagination
+function renderPagination(totalPages) {
+  const pagination = document.getElementById('pagination');
+
+  if (totalPages <= 1) {
+    pagination.innerHTML = '';
+    return;
+  }
+
+  let html = '';
+  html += `<button class="page-btn" ${currentPage === 1 ? 'disabled' : ''} data-page="prev">&laquo; Prev</button>`;
+
+  for (let i = 1; i <= totalPages; i++) {
+    html += `<button class="page-btn ${currentPage === i ? 'active' : ''}" data-page="${i}">${i}</button>`;
+  }
+
+  html += `<button class="page-btn" ${currentPage === totalPages ? 'disabled' : ''} data-page="next">Next &raquo;</button>`;
+
+  pagination.innerHTML = html;
+}
+
+// Event listeners
+document.addEventListener('DOMContentLoaded', () => {
+  // View toggle
+  document.querySelectorAll('[data-view]').forEach(btn => {
+    btn.addEventListener('click', () => {
+      document.querySelectorAll('[data-view]').forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+      currentView = btn.dataset.view;
+      currentPage = 1;
+      render();
+    });
+  });
+
+  // Category filters
+  document.querySelectorAll('[data-category]').forEach(btn => {
+    btn.addEventListener('click', () => {
+      document.querySelectorAll('[data-category]').forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+      currentCategory = btn.dataset.category;
+      currentPage = 1;
+      render();
+    });
+  });
+
+  // Source exclusion toggles
+  document.querySelectorAll('.toggle-item input').forEach(checkbox => {
+    checkbox.addEventListener('change', () => {
+      currentPage = 1;
+      render();
+    });
+  });
+
+  // Pagination
+  document.getElementById('pagination').addEventListener('click', (e) => {
+    if (e.target.classList.contains('page-btn') && !e.target.disabled) {
+      const page = e.target.dataset.page;
+      if (page === 'prev') currentPage--;
+      else if (page === 'next') currentPage++;
+      else currentPage = parseInt(page);
+      render();
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+  });
+
+  // Initial render
+  render();
+});
+</script>
 
 </body>
 </html>
