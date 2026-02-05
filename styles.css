@@ -26,8 +26,14 @@ a:hover { text-decoration: underline; }
 /* === Card Grid (index) === */
 .card-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
-  gap: 1.5rem;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  gap: 1.25rem;
+}
+@media (min-width: 1400px) {
+  .card-grid { grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); }
+}
+@media (min-width: 1800px) {
+  .card-grid { grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); }
 }
 .card {
   background: #fff;
@@ -53,8 +59,10 @@ a:hover { text-decoration: underline; }
 .badge.health { background: #e8f5e9; color: #2e7d32; }
 .badge.education { background: #e3f2fd; color: #1565c0; }
 .card h2 { font-size: 1.15rem; margin-bottom: .4rem; }
-.card .founder { font-size: .85rem; color: #666; margin-bottom: .6rem; }
-.card .summary { font-size: .9rem; color: #444; flex-grow: 1; }
+.card .founder { font-size: .85rem; color: #666; margin-bottom: .4rem; }
+.card .affiliation { font-size: .78rem; color: #888; margin-bottom: .5rem; font-style: italic; }
+.card .source { font-size: .75rem; color: #a51c30; margin-bottom: .6rem; background: #fdf2f2; padding: 3px 8px; border-radius: 4px; display: inline-block; }
+.card .summary { font-size: .88rem; color: #444; flex-grow: 1; }
 .card .card-footer { margin-top: 1rem; display: flex; justify-content: space-between; align-items: center; }
 .card .stage { font-size: .78rem; color: #888; font-weight: 500; }
 .btn {
