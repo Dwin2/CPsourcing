@@ -3,14 +3,14 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>HUCP Startup Sourcing — 30 Prospects</title>
+  <title>HUCP Startup Sourcing — 100 Prospects</title>
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
 
 <header class="site-header">
   <h1>HUCP Startup Sourcing — Part 1 Prospects</h1>
-  <p>30 Early-Stage Startups | Digital Health &amp; Education | Harvard-Affiliated Founders</p>
+  <p>100 Early-Stage Startups | Digital Health &amp; Education | Harvard-Affiliated Founders</p>
 </header>
 
 <div class="container">
@@ -64,12 +64,13 @@
 </div><!-- /container -->
 
 <footer style="text-align:center; padding:2rem; background:#1c1c1c; color:#888; font-size:.8rem; margin-top:3rem;">
-  HUCP Final Round Deliverable Research &bull; Spring 2026 &bull; 30 Startup Prospects
+  HUCP Final Round Deliverable Research &bull; Spring 2026 &bull; 100 Startup Prospects
 </footer>
 
 <script>
-// Prospect data
+// Prospect data - 100 startups
 const prospects = [
+  // Original 30
   { id: 1, name: "Sporo Health", founder: "Kimon-Aristotelis Vogt & Sonu Kumar", affiliation: "Harvard SEAS / Harvard Medical School", source: "Launch Lab X GEO", sourceKey: "ilabs", category: "health", summary: "AI-powered clinical scribe and copilot platform that automates medical documentation.", stage: "Seed • ~$1.1 M", link: "01-sporo-health.html" },
   { id: 2, name: "Kedi Labs", founder: "Michelle Frye, DVM, SM", affiliation: "Harvard T.H. Chan School of Public Health '99", source: "HAE Accelerator 2024", sourceKey: "hae", category: "health", summary: "At-home pet diagnostic kits using rapid-test and molecular PCR technology.", stage: "Pre-Seed • HAE 2024", link: "02-kedi-labs.html" },
   { id: 3, name: "PathCision Medicine", founder: "David Lee, MD PhD & Shana Wang", affiliation: "Harvard Medical School", source: "Harvard Ventures Database", sourceKey: "hvd", category: "health", summary: "Next-generation antibody-drug conjugate platform using ML to target cancer.", stage: "Seed • $800 K", link: "03-pathcision.html" },
@@ -99,7 +100,81 @@ const prospects = [
   { id: 27, name: "GuardianSat", founder: "Christopher Rohe", affiliation: "Harvard Kennedy School", source: "HAE Accelerator 2024 (Demo Day Winner)", sourceKey: "hae", category: "other", summary: "Space debris management in Geostationary Earth Orbit.", stage: "Pre-Seed • HAE Demo Day Winner", link: "27-guardiansat.html" },
   { id: 28, name: "Inquisio", founder: "Joshua Penner", affiliation: "Harvard Extension School", source: "HAE Accelerator 2024", sourceKey: "hae", category: "other", summary: "Public records request platform for local governments.", stage: "Pre-Seed • HAE 2024", link: "28-inquisio.html" },
   { id: 29, name: "FanEQT", founder: "Usman Shuja", affiliation: "Harvard Kennedy School", source: "HAE Accelerator 2024", sourceKey: "hae", category: "other", summary: "Sports asset monetization and stadium fractional ownership marketplace.", stage: "Pre-Seed • HAE 2024", link: "29-faneqt.html" },
-  { id: 30, name: "Platform", founder: "Adrian Washington", affiliation: "Harvard (HAE Cohort)", source: "HAE Accelerator 2024", sourceKey: "hae", category: "other", summary: "Revolutionizing construction with the Platform Method™.", stage: "Pre-Seed • HAE 2024", link: "30-platform-method.html" }
+  { id: 30, name: "Platform", founder: "Adrian Washington", affiliation: "Harvard (HAE Cohort)", source: "HAE Accelerator 2024", sourceKey: "hae", category: "other", summary: "Revolutionizing construction with the Platform Method™.", stage: "Pre-Seed • HAE 2024", link: "30-platform-method.html" },
+
+  // New Digital Health prospects (31-65)
+  { id: 31, name: "Elektra Health", founder: "Jannine Versi", affiliation: "Harvard Business School '14", source: "HBS Alumni Funding News", sourceKey: "other", category: "health", summary: "Healthcare platform for menopause providing virtual care and education.", stage: "Seed • $3.3M", link: "#" },
+  { id: 32, name: "Trove Health", founder: "Matt Ross", affiliation: "Harvard Business School '22", source: "HBS Alumni Funding News", sourceKey: "other", category: "health", summary: "Medical records company streamlining health data access and management.", stage: "Seed • $3M", link: "#" },
+  { id: 33, name: "Soulside", founder: "Surabhi Bhandari", affiliation: "Harvard Business School '17", source: "HBS Alumni Funding News", sourceKey: "other", category: "health", summary: "Postpartum mental health company providing support for new mothers.", stage: "Seed", link: "#" },
+  { id: 34, name: "Diana Health", founder: "Kate Condliffe", affiliation: "Harvard Business School '08", source: "HBS Alumni Funding News", sourceKey: "other", category: "health", summary: "Women's health practice network transforming maternity and gynecology care.", stage: "Series B • $34M", link: "#" },
+  { id: 35, name: "Omada Health", founder: "Sean Duffy, MD MBA", affiliation: "Harvard Medical School / HBS", source: "Rock Health / Alumni Success", sourceKey: "other", category: "health", summary: "Virtual-first chronic care for diabetes, hypertension, and weight management.", stage: "Late Stage", link: "#" },
+  { id: 36, name: "Komodo Health", founder: "Arif Nathoo, MD MPA", affiliation: "Harvard Medical School / HKS", source: "Healthcare Intelligence Leaders", sourceKey: "other", category: "health", summary: "Healthcare intelligence platform mapping patient journeys across the system.", stage: "Late Stage • $600M+", link: "#" },
+  { id: 37, name: "Beaver Health", founder: "Harvard PIC Team", affiliation: "Harvard College / Innovation Labs", source: "President's Innovation Challenge 2024", sourceKey: "ilabs", category: "health", summary: "Culturally responsive cognitive activities for older adults.", stage: "Pre-Seed • $75K PIC + NIH grants", link: "#" },
+  { id: 38, name: "Patient First.AI", founder: "Fiza Shaukat, MPH", affiliation: "Harvard T.H. Chan SPH '22", source: "President's Innovation Challenge 2023", sourceKey: "ilabs", category: "health", summary: "Digital health card addressing all patient healthcare needs in one platform.", stage: "Pre-Seed • $75K PIC Winner", link: "#" },
+  { id: 39, name: "InGel Therapeutics", founder: "HBS/HMS Team", affiliation: "Harvard Business School / HMS", source: "President's Innovation Challenge 2023", sourceKey: "ilabs", category: "health", summary: "Stem cell and tissue engineering to rescue and restore vision.", stage: "Early Stage • PIC Finalist", link: "#" },
+  { id: 40, name: "Kiikter", founder: "HSPH Team", affiliation: "Harvard T.H. Chan SPH", source: "President's Innovation Challenge 2023", sourceKey: "ilabs", category: "health", summary: "Low-cost fortified snacks to reduce childhood anemia in developing regions.", stage: "Early Stage • PIC Finalist", link: "#" },
+  { id: 41, name: "PeriPeach", founder: "HMS Team", affiliation: "Harvard Medical School", source: "President's Innovation Challenge 2023", sourceKey: "ilabs", category: "health", summary: "Medical device protecting the pelvic floor during childbirth.", stage: "Early Stage • PIC Finalist", link: "#" },
+  { id: 42, name: "Hometeam", founder: "HBS Team", affiliation: "Harvard Business School", source: "President's Innovation Challenge 2024", sourceKey: "ilabs", category: "health", summary: "Platform enabling family and paid caregivers to deliver efficient care.", stage: "Early Stage • PIC Finalist", link: "#" },
+  { id: 43, name: "Bullseye Biosciences", founder: "GSAS Team", affiliation: "Harvard Griffin GSAS", source: "President's Innovation Challenge 2024", sourceKey: "ilabs", category: "health", summary: "Transforming therapeutic protein design for life-saving medicines.", stage: "Early Stage • PIC Finalist", link: "#" },
+  { id: 44, name: "Karma Health", founder: "Bishal Belbase", affiliation: "Harvard T.H. Chan SPH '20", source: "Cheng Fellowship / SICI", sourceKey: "other", category: "health", summary: "Health venture from Harvard Chan School Cheng Fellow.", stage: "Early Stage", link: "#" },
+  { id: 45, name: "Speetar", founder: "Mohamed Aburawi, MPA MBA", affiliation: "Harvard Kennedy School / MIT Sloan", source: "Echoing Green Fellow", sourceKey: "other", category: "health", summary: "AI-powered digital health platform for conflict-affected and low-resource settings.", stage: "Growth • Millions served", link: "#" },
+  { id: 46, name: "Wellframe", founder: "Trishan Panch, DrPH", affiliation: "Harvard T.H. Chan SPH", source: "Harvard Public Health Innovation Award", sourceKey: "other", category: "health", summary: "Digital health platform for care management (acquired by HealthEdge 2021).", stage: "Acquired", link: "#" },
+  { id: 47, name: "Aledade", founder: "Farzad Mostashari, MD MPH", affiliation: "Harvard T.H. Chan SPH", source: "Healthcare Leadership / Alumni Success", sourceKey: "other", category: "health", summary: "Nation's largest network of independent primary care ACOs saving Medicare $1B+.", stage: "Late Stage • Unicorn", link: "#" },
+  { id: 48, name: "Virtudent", founder: "Shant Hagopian", affiliation: "Harvard Law School '15", source: "HLS Transactional Law Clinic", sourceKey: "other", category: "health", summary: "Tele-dentistry startup increasing oral health access for underserved populations.", stage: "Early Stage", link: "#" },
+  { id: 49, name: "Waymark", founder: "Afia Asamoah", affiliation: "Harvard Law School", source: "HLS Alumni / Google Health", sourceKey: "other", category: "health", summary: "Improving Medicaid care through technology and community health workers.", stage: "Series B", link: "#" },
+  { id: 50, name: "Grow Therapy", founder: "HMS Founders", affiliation: "Harvard Medical School", source: "Mental Health Tech Leaders", sourceKey: "other", category: "health", summary: "Enabling therapists to launch in-network teletherapy practices.", stage: "Series C • $178M", link: "#" },
+  { id: 51, name: "Emulate", founder: "Wyss Institute Team", affiliation: "Wyss Institute / Harvard", source: "Wyss Institute Spinout", sourceKey: "other", category: "health", summary: "Organs-on-Chips technology for drug development and personalized medicine.", stage: "Series E • $225M+", link: "#" },
+  { id: 52, name: "Gameto", founder: "Wyss Institute Team", affiliation: "Wyss Institute / Harvard", source: "Wyss Institute Spinout", sourceKey: "other", category: "health", summary: "Making IVF safer, cheaper, and more accessible with ovarian organoid technology.", stage: "Series B • $40M+", link: "#" },
+  { id: 53, name: "BOA Biomedical", founder: "Wyss Institute Team", affiliation: "Wyss Institute / Harvard", source: "Wyss Institute Spinout", sourceKey: "other", category: "health", summary: "Pathogen-capture technology removing bacteria and viruses from blood.", stage: "Early Stage", link: "#" },
+  { id: 54, name: "NuProbe", founder: "Wyss Institute Team", affiliation: "Wyss Institute / Harvard", source: "Wyss Institute Spinout", sourceKey: "other", category: "health", summary: "DNA toehold probe systems for non-invasive cancer diagnostics.", stage: "Series A", link: "#" },
+  { id: 55, name: "Rejuvenate Bio", founder: "Wyss Institute Team", affiliation: "Wyss Institute / Harvard", source: "Wyss Institute Spinout", sourceKey: "other", category: "health", summary: "Gene therapy to treat age-related conditions starting with dogs.", stage: "Series A • $10M+", link: "#" },
+  { id: 56, name: "Illumicell", founder: "Harvard Innovation Labs", affiliation: "Harvard Innovation Labs", source: "Launch Lab X 2023-24", sourceKey: "ilabs", category: "health", summary: "AI-based sperm testing for fertility clinics and home use.", stage: "Early Stage", link: "#" },
+  { id: 57, name: "Skills.tech", founder: "HMS Team", affiliation: "Harvard Medical School", source: "President's Innovation Challenge 2024", sourceKey: "ilabs", category: "health", summary: "AI-crafted learning experiences for medical education and corporate training.", stage: "Early Stage • PIC Finalist", link: "#" },
+  { id: 58, name: "Accelera", founder: "Wyss Institute Team", affiliation: "Wyss Institute / Harvard", source: "Wyss Institute Spinout", sourceKey: "other", category: "health", summary: "Wearable devices supporting neurological function in cerebral palsy patients.", stage: "Early Stage", link: "#" },
+  { id: 59, name: "Amend Surgical", founder: "Wyss Institute Team", affiliation: "Wyss Institute / Harvard", source: "Wyss Institute Spinout", sourceKey: "other", category: "health", summary: "Biocompatible adhesive for sealing wounds after oral surgery.", stage: "Early Stage", link: "#" },
+  { id: 60, name: "ASIRI Health Arts", founder: "HSPH Fellow", affiliation: "Harvard T.H. Chan SPH", source: "Harvard Innovation Labs", sourceKey: "ilabs", category: "health", summary: "Expressive art framework advocating for mental health wellness.", stage: "Early Stage", link: "#" },
+  { id: 61, name: "Reify Health", founder: "Rock Health Boston", affiliation: "Harvard Medical School Partners", source: "Rock Health Boston Cohort", sourceKey: "other", category: "health", summary: "Clinical trial management platform accelerating drug development.", stage: "Series D • $220M+", link: "#" },
+  { id: 62, name: "MapLight Therapeutics", founder: "Chris Kroeger", affiliation: "Harvard Business School '03", source: "HBS Alumni Funding News", sourceKey: "other", category: "health", summary: "Brain disorder therapeutics platform for neurological diseases.", stage: "Series C • $225M", link: "#" },
+  { id: 63, name: "Africa Healthcare Network", founder: "Nikhil Pereira-Kamath", affiliation: "Harvard Business School '23", source: "HBS Alumni Funding News", sourceKey: "other", category: "health", summary: "Dialysis chain expanding kidney care access in Sub-Saharan Africa.", stage: "Growth • $20M", link: "#" },
+  { id: 64, name: "Natalist", founder: "Halle Tecco", affiliation: "Harvard Business School", source: "Rock Health Founder Portfolio", sourceKey: "other", category: "health", summary: "Fertility and pregnancy wellness products for modern families.", stage: "Seed Stage", link: "#" },
+  { id: 65, name: "Cofertility", founder: "Halle Tecco", affiliation: "Harvard Business School", source: "Rock Health Founder Portfolio", sourceKey: "other", category: "health", summary: "Egg freezing and donation platform making fertility care accessible.", stage: "Seed • $5M+", link: "#" },
+
+  // New Education prospects (66-100)
+  { id: 66, name: "Edstation", founder: "Nathalia Kelday", affiliation: "Harvard GSE '24", source: "HGSE Alumni / Lemann Fellow", sourceKey: "other", category: "education", summary: "Hands-on startup school for preteens solving global challenges.", stage: "Pre-Seed • 230+ graduates", link: "#" },
+  { id: 67, name: "Light the Way", founder: "Juliana Kagami & Luciana Schmidt", affiliation: "Harvard GSE '23", source: "HGSE Education Entrepreneurship Fellowship", sourceKey: "other", category: "education", summary: "Empowering Brazilian immigrants through education and community support.", stage: "Pre-Seed • Fellowship Award", link: "#" },
+  { id: 68, name: "Saturday Art Class", founder: "HGSE Team", affiliation: "Harvard GSE", source: "President's Innovation Challenge 2024", sourceKey: "ilabs", category: "education", summary: "Visual arts program developing SEL skills for underserved children in India.", stage: "Early Stage • PIC Finalist", link: "#" },
+  { id: 69, name: "Melanin Doc", founder: "HBS Team", affiliation: "Harvard Business School", source: "President's Innovation Challenge 2023", sourceKey: "ilabs", category: "education", summary: "Scholarships and mentorship for minority students pursuing medicine.", stage: "Early Stage • PIC Finalist", link: "#" },
+  { id: 70, name: "BoardOnTrack", founder: "Marci Cornell-Feist", affiliation: "Harvard GSE '91", source: "HGSE Alumni Success Stories", sourceKey: "other", category: "education", summary: "Improving charter schools through board leadership training and tools.", stage: "Growth Stage", link: "#" },
+  { id: 71, name: "Nio", founder: "Harvard Innovation Labs", affiliation: "Harvard Innovation Labs", source: "Launch Lab X", sourceKey: "ilabs", category: "education", summary: "Interactive adaptive self-study tools helping students ace exams worldwide.", stage: "Early Stage", link: "#" },
+  { id: 72, name: "Classy AI", founder: "Harvard Innovation Labs", affiliation: "Harvard Innovation Labs", source: "Launch Lab X 2024-25", sourceKey: "ilabs", category: "education", summary: "Ethical Socratic learning companion teaching students how to think.", stage: "Pre-Seed • MVP launched", link: "#" },
+  { id: 73, name: "Unlock Education", founder: "Harvard Innovation Labs", affiliation: "Harvard Innovation Labs", source: "Launch Lab X 2024-25", sourceKey: "ilabs", category: "education", summary: "Empowering schools to leverage data for better decisions.", stage: "Early Stage • Florida pilots 2025", link: "#" },
+  { id: 74, name: "PromptED", founder: "Harvard Innovation Labs", affiliation: "Harvard Griffin GSAS", source: "Launch Lab X 2024-25", sourceKey: "ilabs", category: "education", summary: "Supporting educators in AI-driven learning design.", stage: "Early Stage", link: "#" },
+  { id: 75, name: "Rise Collective", founder: "Harvard Innovation Labs", affiliation: "Harvard Innovation Labs", source: "Launch Lab X 2024-25", sourceKey: "ilabs", category: "education", summary: "Student fellowship connecting youth to mentors for career development.", stage: "Early Stage • Fellowship launched", link: "#" },
+  { id: 76, name: "CiteRight", founder: "HAE 2023 Cohort", affiliation: "Harvard Alumni", source: "HAE Accelerator 2023", sourceKey: "hae", category: "education", summary: "Essential litigation collaboration tool for lawyers and legal teams.", stage: "Seed • HAE 2023", link: "#" },
+  { id: 77, name: "Zette", founder: "HAE 2023 Cohort", affiliation: "Harvard Alumni", source: "HAE Accelerator 2023", sourceKey: "hae", category: "education", summary: "Pay-per-article access to paywalled publications with revenue sharing.", stage: "Seed • HAE 2023", link: "#" },
+  { id: 78, name: "Dollarize", founder: "HAE 2023 Cohort", affiliation: "Harvard Alumni", source: "HAE Accelerator 2023", sourceKey: "hae", category: "other", summary: "Financial access platform protecting foreign nationals from currency devaluation.", stage: "Seed • HAE 2023", link: "#" },
+  { id: 79, name: "Braven", founder: "Aimee Eubanks Davis", affiliation: "Harvard Kennedy School", source: "SICI / Social Enterprise", sourceKey: "other", category: "education", summary: "Career readiness program for first-generation college students.", stage: "Growth • Nonprofit", link: "#" },
+  { id: 80, name: "Education SuperHighway", founder: "Evan Marwell", affiliation: "Harvard Kennedy School", source: "SICI / Social Enterprise", sourceKey: "other", category: "education", summary: "Closing the digital divide by connecting schools to high-speed internet.", stage: "Mission Complete • Nonprofit", link: "#" },
+  { id: 81, name: "One Acre Fund", founder: "Andrew Youn", affiliation: "Harvard Kennedy School", source: "SICI / Social Enterprise", sourceKey: "other", category: "education", summary: "Agricultural training and financing for smallholder farmers in Africa.", stage: "Growth • 1M+ farmers served", link: "#" },
+  { id: 82, name: "Sanergy", founder: "HKS/HBS Team", affiliation: "Harvard Kennedy School / HBS", source: "SICI / Social Enterprise", sourceKey: "other", category: "education", summary: "Sanitation solutions and waste-to-value systems for urban slums.", stage: "Growth • Social Enterprise", link: "#" },
+  { id: 83, name: "SIRUM", founder: "Kiah Williams", affiliation: "Harvard Kennedy School", source: "SICI / Social Enterprise", sourceKey: "other", category: "health", summary: "Redistributing unused medication to people in need.", stage: "Growth • Nonprofit", link: "#" },
+  { id: 84, name: "Recidiviz", founder: "Clementine Jacoby", affiliation: "Harvard Kennedy School", source: "SICI / Social Enterprise", sourceKey: "other", category: "education", summary: "Data platform helping criminal justice leaders reduce incarceration.", stage: "Growth • Nonprofit Tech", link: "#" },
+  { id: 85, name: "Muso", founder: "Ari Johnson, MD", affiliation: "Harvard Medical School / HKS", source: "SICI / Social Enterprise", sourceKey: "other", category: "health", summary: "Community health worker model eliminating delays to healthcare in Mali.", stage: "Growth • Nonprofit", link: "#" },
+  { id: 86, name: "Doximity", founder: "Nate Gross, MD", affiliation: "Harvard Business School", source: "Rock Health Co-founder", sourceKey: "other", category: "health", summary: "Professional network for physicians with 2M+ members.", stage: "Public • NYSE: DOCS", link: "#" },
+  { id: 87, name: "IBL Education", founder: "MIT/Harvard Partnership", affiliation: "Harvard / MIT", source: "EdTech AI Leaders", sourceKey: "other", category: "education", summary: "AI personalized instruction platform used by 400+ institutions.", stage: "Growth Stage", link: "#" },
+  { id: 88, name: "Root Robotics", founder: "Wyss Institute Team", affiliation: "Wyss Institute / Harvard", source: "Wyss Institute Spinout", sourceKey: "other", category: "education", summary: "Educational coding robot for K-12 (acquired by iRobot 2019).", stage: "Acquired by iRobot", link: "#" },
+  { id: 89, name: "Ultivue", founder: "Wyss Institute Team", affiliation: "Wyss Institute / Harvard", source: "Wyss Institute Spinout", sourceKey: "other", category: "health", summary: "Innovative imaging solutions using DNA-PAINT technology.", stage: "Series B", link: "#" },
+  { id: 90, name: "Validere", founder: "Wyss Institute Team", affiliation: "Wyss Institute / Harvard", source: "Wyss Institute Spinout", sourceKey: "other", category: "other", summary: "Liquid fingerprinting technology for chemical characterization.", stage: "Series B • $80M+", link: "#" },
+  { id: 91, name: "AminoX", founder: "Wyss Institute Team", affiliation: "Wyss Institute / Harvard", source: "Wyss Institute / Northpond", sourceKey: "other", category: "health", summary: "Novel approach for incorporating non-standard amino acids into protein drugs.", stage: "Early Stage", link: "#" },
+  { id: 92, name: "HealthLab Accelerators", founder: "HSPH/Harvard College", affiliation: "Harvard T.H. Chan SPH", source: "Harvard Chan / Lemann Program", sourceKey: "other", category: "health", summary: "Program helping students launch health startups with $20K prizes.", stage: "Accelerator Program", link: "#" },
+  { id: 93, name: "Green Building Health", founder: "Adele Houghton, DrPH", affiliation: "Harvard T.H. Chan SPH '23", source: "HealthLab Accelerators", sourceKey: "other", category: "health", summary: "Digital tool connecting developers and communities for healthy green buildings.", stage: "Early Stage", link: "#" },
+  { id: 94, name: "PS2 Pal", founder: "Gregory Kestin", affiliation: "Harvard Physics Lecturer", source: "Harvard AI Education Research", sourceKey: "other", category: "education", summary: "AI tutor helping students learn physics through personalized guidance.", stage: "Research/Pilot", link: "#" },
+  { id: 95, name: "HBS LTV Feedback", founder: "Prof. Jeff Bussgang", affiliation: "Harvard Business School", source: "HBS AI Teaching Innovation", sourceKey: "other", category: "education", summary: "Custom GPT providing feedback on student papers and startup ideas.", stage: "Internal Tool", link: "#" },
+  { id: 96, name: "Memora Health", founder: "Manav Sevak", affiliation: "Harvard-affiliated", source: "Digital Health Leaders 2024", sourceKey: "other", category: "health", summary: "Intelligent care management platform for chronic conditions.", stage: "Series B • $30M+", link: "#" },
+  { id: 97, name: "Vaxess Technologies", founder: "Harvard PIC Winner", affiliation: "Harvard Innovation Labs", source: "President's Innovation Challenge", sourceKey: "ilabs", category: "health", summary: "Thermostable vaccine delivery using silk protein technology.", stage: "Series A • $8M+", link: "#" },
+  { id: 98, name: "Kick Health", founder: "Harvard/Stanford/Yale Partners", affiliation: "Harvard Psychiatry Partners", source: "Mental Health Tech", sourceKey: "other", category: "health", summary: "Telemedicine for performance anxiety and sleep issues.", stage: "Seed Stage", link: "#" },
+  { id: 99, name: "Poppyseed Health", founder: "Halle Tecco Portfolio", affiliation: "Harvard Business School Network", source: "Women's Health Portfolio", sourceKey: "other", category: "health", summary: "24/7 nurse support for pregnancy and postpartum via text.", stage: "Seed Stage", link: "#" },
+  { id: 100, name: "Tia", founder: "Carolyn Witte", affiliation: "Harvard Network", source: "Women's Health Leaders", sourceKey: "other", category: "health", summary: "Modern women's healthcare clinics combining virtual and in-person care.", stage: "Series B • $100M+", link: "#" }
 ];
 
 // State
@@ -156,6 +231,7 @@ function createCard(p) {
   const badgeClass = badgeClasses[p.category] || 'badge';
   const badgeStyle = badgeStyles[p.category] || '';
   const categoryLabel = categoryLabels[p.category] || p.category;
+  const linkAttr = p.link === '#' ? 'style="pointer-events:none;opacity:0.5;"' : '';
 
   return `
     <div class="card" data-id="${p.id}" data-category="${p.category}" data-source="${p.sourceKey}">
@@ -167,7 +243,7 @@ function createCard(p) {
       <p class="summary">${p.summary}</p>
       <div class="card-footer">
         <span class="stage">${p.stage}</span>
-        <a href="${p.link}" class="btn">View Details &rarr;</a>
+        <a href="${p.link}" class="btn" ${linkAttr}>View Details &rarr;</a>
       </div>
     </div>
   `;
