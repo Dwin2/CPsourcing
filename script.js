@@ -1,30 +1,30 @@
-// Ask AI — calls OpenAI API and displays response inline
+// Ask AI — calls Google Gemini API (free tier) and displays response inline
 (function () {
-  const API_KEY_STORAGE = 'cpsourcing_openai_key';
+  var API_KEY_STORAGE = 'cpsourcing_gemini_key';
 
   function getApiKey() {
     return localStorage.getItem(API_KEY_STORAGE);
   }
 
   function promptForApiKey() {
-    const key = prompt(
-      'Enter your OpenAI API key to use Ask AI.\n\n' +
-      'Your key is stored in your browser only (localStorage) and never sent anywhere except OpenAI.\n\n' +
-      'Get one at: https://platform.openai.com/api-keys'
+    var key = window.prompt(
+      'Enter your Google Gemini API key to use Ask AI.\n\n' +
+      'It is 100% FREE — no credit card needed.\n\n' +
+      'Get one in 10 seconds at:\nhttps://aistudio.google.com/apikey\n\n' +
+      'Your key stays in your browser only.'
     );
-    if (key && key.trim().startsWith('sk-')) {
+    if (key && key.trim().length > 10) {
       localStorage.setItem(API_KEY_STORAGE, key.trim());
       return key.trim();
     }
     if (key !== null) {
-      alert('Invalid API key. It should start with "sk-".');
+      window.alert('That doesn\'t look like a valid key. Please try again.');
     }
     return null;
   }
 
-  // Ensure each .ai-dialogue has a response container
   function ensureResponseDiv(dialogue) {
-    let responseDiv = dialogue.querySelector('.ai-response');
+    var responseDiv = dialogue.querySelector('.ai-response');
     if (!responseDiv) {
       responseDiv = document.createElement('div');
       responseDiv.className = 'ai-response';
@@ -33,34 +33,33 @@
     return responseDiv;
   }
 
-  // Build the prompt with section context
   function buildPrompt(dialogue, question) {
-    const section = dialogue.closest('.section') || dialogue.parentElement;
-    const sectionTitle = section.querySelector('h3');
-    const sectionText = section.querySelector('p, ul, ol');
-    const companyName = document.querySelector('.detail-header h1');
+    var section = dialogue.closest('.section') || dialogue.parentElement;
+    var sectionTitle = section.querySelector('h3');
+    var sectionText = section.querySelector('p, ul, ol');
+    var companyName = document.querySelector('.detail-header h1');
 
-    let context = '';
+    var context = '';
     if (companyName) {
-      context += `Company: ${companyName.textContent.trim()}\n`;
+      context += 'Company: ' + companyName.textContent.trim() + '\n';
     }
     if (sectionTitle && sectionText) {
-      context += `Section — ${sectionTitle.textContent.trim()}:\n${sectionText.textContent.trim().substring(0, 800)}\n`;
+      context += 'Section — ' + sectionTitle.textContent.trim() + ':\n' +
+        sectionText.textContent.trim().substring(0, 800) + '\n';
     }
 
-    return [
-      {
-        role: 'system',
-        content: 'You are a helpful startup research assistant. Answer concisely based on the context provided. Use markdown formatting for readability. Keep answers to 2-3 paragraphs unless asked for more detail.'
+    var userMsg = context ? context + '\nQuestion: ' + question : question;
+
+    return {
+      system_instruction: {
+        parts: [{ text: 'You are a helpful startup research assistant. Answer concisely based on the context provided. Keep answers to 2-3 paragraphs unless asked for more detail.' }]
       },
-      {
-        role: 'user',
-        content: context ? `${context}\nQuestion: ${question}` : question
-      }
-    ];
+      contents: [
+        { role: 'user', parts: [{ text: userMsg }] }
+      ]
+    };
   }
 
-  // Simple markdown to HTML (bold, italic, lists, line breaks)
   function renderMarkdown(text) {
     return text
       .replace(/&/g, '&amp;')
@@ -73,121 +72,101 @@
       .replace(/\n/g, '<br>');
   }
 
-  async function askAI(dialogue, question) {
-    let apiKey = getApiKey();
+  function askAI(dialogue, question) {
+    var apiKey = getApiKey();
     if (!apiKey) {
       apiKey = promptForApiKey();
       if (!apiKey) return;
     }
 
-    const responseDiv = ensureResponseDiv(dialogue);
-    const btn = dialogue.querySelector('button');
-    const originalText = btn.textContent;
+    var responseDiv = ensureResponseDiv(dialogue);
+    var btn = dialogue.querySelector('button');
+    var originalText = btn.textContent;
 
-    // Show loading state
     btn.disabled = true;
     btn.textContent = 'Thinking...';
-    responseDiv.classList.add('active');
+    responseDiv.className = 'ai-response active';
     responseDiv.innerHTML = '<em>Loading...</em>';
 
-    const messages = buildPrompt(dialogue, question);
+    var body = buildPrompt(dialogue, question);
+    var url = 'https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent?key=' + encodeURIComponent(apiKey);
 
-    try {
-      const res = await fetch('https://api.openai.com/v1/chat/completions', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-          'Authorization': `Bearer ${apiKey}`
-        },
-        body: JSON.stringify({
-          model: 'gpt-4o-mini',
-          messages: messages,
-          stream: true
-        })
-      });
-
-      if (res.status === 401) {
+    fetch(url, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(body)
+    })
+    .then(function (res) {
+      if (res.status === 400 || res.status === 403) {
         localStorage.removeItem(API_KEY_STORAGE);
         responseDiv.innerHTML = '<strong>Invalid API key.</strong> Click "Ask AI" again to re-enter your key.';
         btn.disabled = false;
         btn.textContent = originalText;
-        return;
+        return null;
       }
-
       if (!res.ok) {
-        const err = await res.text();
-        responseDiv.innerHTML = `<strong>Error ${res.status}:</strong> ${err}`;
-        btn.disabled = false;
-        btn.textContent = originalText;
-        return;
+        return res.text().then(function (errText) {
+          responseDiv.innerHTML = '<strong>Error ' + res.status + ':</strong> ' + errText;
+          btn.disabled = false;
+          btn.textContent = originalText;
+          return null;
+        });
+      }
+      return res.json();
+    })
+    .then(function (data) {
+      if (!data) return;
+
+      var text = '';
+      try {
+        text = data.candidates[0].content.parts[0].text;
+      } catch (e) {
+        text = 'No response received.';
       }
 
-      // Stream the response
-      const reader = res.body.getReader();
-      const decoder = new TextDecoder();
-      let fullText = '';
-      responseDiv.innerHTML = '';
-
-      while (true) {
-        const { done, value } = await reader.read();
-        if (done) break;
-
-        const chunk = decoder.decode(value, { stream: true });
-        const lines = chunk.split('\n').filter(l => l.startsWith('data: '));
-
-        for (const line of lines) {
-          const data = line.slice(6);
-          if (data === '[DONE]') break;
-          try {
-            const parsed = JSON.parse(data);
-            const content = parsed.choices?.[0]?.delta?.content;
-            if (content) {
-              fullText += content;
-              responseDiv.innerHTML = renderMarkdown(fullText);
-            }
-          } catch (e) {
-            // skip malformed chunks
-          }
-        }
-      }
-
-      if (!fullText) {
-        responseDiv.innerHTML = '<em>No response received.</em>';
-      }
-    } catch (err) {
-      responseDiv.innerHTML = `<strong>Network error:</strong> ${err.message}`;
-    }
-
-    btn.disabled = false;
-    btn.textContent = originalText;
+      responseDiv.innerHTML = renderMarkdown(text);
+      btn.disabled = false;
+      btn.textContent = originalText;
+    })
+    .catch(function (err) {
+      responseDiv.innerHTML = '<strong>Network error:</strong> ' + err.message;
+      btn.disabled = false;
+      btn.textContent = originalText;
+    });
   }
 
-  document.addEventListener('DOMContentLoaded', () => {
-    // Handle Ask AI button clicks
-    document.querySelectorAll('.ai-dialogue button').forEach(btn => {
-      btn.addEventListener('click', () => {
-        const dialogue = btn.closest('.ai-dialogue');
-        const input = dialogue.querySelector('input[type="text"]');
-        const question = input.value.trim();
+  document.addEventListener('DOMContentLoaded', function () {
+    var buttons = document.querySelectorAll('.ai-dialogue button');
+    for (var i = 0; i < buttons.length; i++) {
+      (function (btn) {
+        btn.addEventListener('click', function (e) {
+          e.preventDefault();
+          var dialogue = btn.closest('.ai-dialogue');
+          var input = dialogue.querySelector('input[type="text"]');
+          var question = input.value.trim();
 
-        if (!question) {
-          input.placeholder = 'Please type a question first...';
-          input.focus();
-          return;
-        }
+          if (!question) {
+            input.placeholder = 'Please type a question first...';
+            input.focus();
+            return;
+          }
 
-        askAI(dialogue, question);
-      });
-    });
+          askAI(dialogue, question);
+        });
+      })(buttons[i]);
+    }
 
-    // Enter key support
-    document.querySelectorAll('.ai-dialogue input[type="text"]').forEach(input => {
-      input.addEventListener('keydown', (e) => {
-        if (e.key === 'Enter') {
-          const btn = input.closest('.ai-dialogue-input').querySelector('button');
-          btn.click();
-        }
-      });
-    });
+    var inputs = document.querySelectorAll('.ai-dialogue input[type="text"]');
+    for (var j = 0; j < inputs.length; j++) {
+      (function (input) {
+        input.addEventListener('keydown', function (e) {
+          if (e.key === 'Enter') {
+            e.preventDefault();
+            var btn = input.closest('.ai-dialogue-input').querySelector('button');
+            btn.click();
+          }
+        });
+      })(inputs[j]);
+    }
   });
 })();
