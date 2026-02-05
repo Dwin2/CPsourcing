@@ -93,9 +93,11 @@
 
   <div class="results-count" id="results-count"></div>
 
+  <div class="pagination" id="pagination-top"></div>
+
   <div id="card-grid"></div>
 
-  <div class="pagination" id="pagination"></div>
+  <div class="pagination" id="pagination-bottom"></div>
 
 </div><!-- /container -->
 
@@ -383,10 +385,12 @@ function render() {
 
 // Render pagination
 function renderPagination(totalPages) {
-  const pagination = document.getElementById('pagination');
+  const paginationTop = document.getElementById('pagination-top');
+  const paginationBottom = document.getElementById('pagination-bottom');
 
   if (totalPages <= 1) {
-    pagination.innerHTML = '';
+    paginationTop.innerHTML = '';
+    paginationBottom.innerHTML = '';
     return;
   }
 
@@ -399,7 +403,8 @@ function renderPagination(totalPages) {
 
   html += `<button class="page-btn" ${currentPage === totalPages ? 'disabled' : ''} data-page="next">Next &raquo;</button>`;
 
-  pagination.innerHTML = html;
+  paginationTop.innerHTML = html;
+  paginationBottom.innerHTML = html;
 }
 
 // Event listeners
@@ -434,8 +439,8 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   });
 
-  // Pagination
-  document.getElementById('pagination').addEventListener('click', (e) => {
+  // Pagination (both top and bottom)
+  const handlePagination = (e) => {
     if (e.target.classList.contains('page-btn') && !e.target.disabled) {
       const page = e.target.dataset.page;
       if (page === 'prev') currentPage--;
@@ -444,7 +449,9 @@ document.addEventListener('DOMContentLoaded', () => {
       render();
       window.scrollTo({ top: 0, behavior: 'smooth' });
     }
-  });
+  };
+  document.getElementById('pagination-top').addEventListener('click', handlePagination);
+  document.getElementById('pagination-bottom').addEventListener('click', handlePagination);
 
   // Toggle all sources
   const toggleAllBtn = document.getElementById('toggle-all-sources');
