@@ -1,27 +1,6 @@
 // Ask AI — calls Google Gemini API (free tier) and displays response inline
 (function () {
-  var API_KEY_STORAGE = 'cpsourcing_gemini_key';
-
-  function getApiKey() {
-    return localStorage.getItem(API_KEY_STORAGE);
-  }
-
-  function promptForApiKey() {
-    var key = window.prompt(
-      'Enter your Google Gemini API key to use Ask AI.\n\n' +
-      'It is 100% FREE — no credit card needed.\n\n' +
-      'Get one in 10 seconds at:\nhttps://aistudio.google.com/apikey\n\n' +
-      'Your key stays in your browser only.'
-    );
-    if (key && key.trim().length > 10) {
-      localStorage.setItem(API_KEY_STORAGE, key.trim());
-      return key.trim();
-    }
-    if (key !== null) {
-      window.alert('That doesn\'t look like a valid key. Please try again.');
-    }
-    return null;
-  }
+  var GEMINI_API_KEY = 'AIzaSyDq6glqD69YE8DEq9cGiD4d7QURBUYA8bc';
 
   function ensureResponseDiv(dialogue) {
     var responseDiv = dialogue.querySelector('.ai-response');
@@ -73,12 +52,6 @@
   }
 
   function askAI(dialogue, question) {
-    var apiKey = getApiKey();
-    if (!apiKey) {
-      apiKey = promptForApiKey();
-      if (!apiKey) return;
-    }
-
     var responseDiv = ensureResponseDiv(dialogue);
     var btn = dialogue.querySelector('button');
     var originalText = btn.textContent;
@@ -89,7 +62,7 @@
     responseDiv.innerHTML = '<em>Loading...</em>';
 
     var body = buildPrompt(dialogue, question);
-    var url = 'https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent?key=' + encodeURIComponent(apiKey);
+    var url = 'https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent?key=' + GEMINI_API_KEY;
 
     fetch(url, {
       method: 'POST',
@@ -97,13 +70,6 @@
       body: JSON.stringify(body)
     })
     .then(function (res) {
-      if (res.status === 400 || res.status === 403) {
-        localStorage.removeItem(API_KEY_STORAGE);
-        responseDiv.innerHTML = '<strong>Invalid API key.</strong> Click "Ask AI" again to re-enter your key.';
-        btn.disabled = false;
-        btn.textContent = originalText;
-        return null;
-      }
       if (!res.ok) {
         return res.text().then(function (errText) {
           responseDiv.innerHTML = '<strong>Error ' + res.status + ':</strong> ' + errText;
@@ -141,6 +107,7 @@
       (function (btn) {
         btn.addEventListener('click', function (e) {
           e.preventDefault();
+          e.stopPropagation();
           var dialogue = btn.closest('.ai-dialogue');
           var input = dialogue.querySelector('input[type="text"]');
           var question = input.value.trim();
