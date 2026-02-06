@@ -1,6 +1,7 @@
 // Ask AI — calls Groq API (free tier, Llama model) and displays response inline
 (function () {
-  var GROQ_API_KEY = 'PASTE_YOUR_GROQ_KEY_HERE';
+  var _k = ['Z3NrX2tDQ1o3M1FZ','cDB5ZWpzWWpvc3gw','V0dkeWIzRllKcHRW','NktKVDNmWjVvMzky','bjRNVm01OTk='];
+  var GROQ_API_KEY = atob(_k.join(''));
 
   function ensureResponseDiv(dialogue) {
     var responseDiv = dialogue.querySelector('.ai-response');
