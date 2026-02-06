@@ -1,0 +1,730 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Harvard Startup Intelligence — Pitch Deck</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    @page {
+      size: letter;
+      margin: 0;
+    }
+
+    body {
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+      background: #fff;
+      color: #1a1a2e;
+      line-height: 1.6;
+      -webkit-print-color-adjust: exact;
+      print-color-adjust: exact;
+    }
+
+    .page {
+      width: 100%;
+      min-height: 100vh;
+      padding: 3rem 4rem;
+      page-break-after: always;
+      position: relative;
+    }
+
+    .page:last-child {
+      page-break-after: avoid;
+    }
+
+    /* Cover Page */
+    .cover {
+      background: linear-gradient(135deg, #a51c30 0%, #6d1220 100%);
+      color: #fff;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+    }
+
+    .cover h1 {
+      font-size: 3.5rem;
+      font-weight: 300;
+      letter-spacing: 3px;
+      margin-bottom: 0.5rem;
+    }
+
+    .cover h1 strong {
+      font-weight: 700;
+    }
+
+    .cover .tagline {
+      font-size: 1.4rem;
+      font-weight: 300;
+      opacity: 0.9;
+      margin-bottom: 3rem;
+      letter-spacing: 1px;
+    }
+
+    .cover .highlight-box {
+      background: rgba(255,255,255,0.15);
+      padding: 1.5rem 3rem;
+      border-radius: 8px;
+      backdrop-filter: blur(10px);
+      margin-bottom: 4rem;
+    }
+
+    .cover .highlight-box p {
+      font-size: 1.1rem;
+      font-weight: 400;
+    }
+
+    .cover .stats {
+      display: flex;
+      gap: 4rem;
+    }
+
+    .cover .stat {
+      text-align: center;
+    }
+
+    .cover .stat-number {
+      font-size: 3rem;
+      font-weight: 700;
+      display: block;
+    }
+
+    .cover .stat-label {
+      font-size: 0.9rem;
+      opacity: 0.8;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+
+    /* Content Pages */
+    .content-page {
+      background: #fff;
+    }
+
+    .page-header {
+      border-bottom: 3px solid #a51c30;
+      padding-bottom: 1rem;
+      margin-bottom: 2rem;
+    }
+
+    .page-header h2 {
+      font-size: 2rem;
+      font-weight: 600;
+      color: #a51c30;
+    }
+
+    .page-header .page-num {
+      font-size: 0.85rem;
+      color: #888;
+      margin-top: 0.3rem;
+    }
+
+    h3 {
+      font-size: 1.3rem;
+      font-weight: 600;
+      color: #1a1a2e;
+      margin: 1.5rem 0 0.8rem;
+    }
+
+    p {
+      font-size: 1rem;
+      color: #444;
+      margin-bottom: 1rem;
+    }
+
+    .lead {
+      font-size: 1.2rem;
+      color: #333;
+      font-weight: 400;
+      line-height: 1.7;
+    }
+
+    ul {
+      padding-left: 1.5rem;
+      margin-bottom: 1rem;
+    }
+
+    li {
+      font-size: 1rem;
+      color: #444;
+      margin-bottom: 0.5rem;
+    }
+
+    .highlight {
+      color: #a51c30;
+      font-weight: 600;
+    }
+
+    /* Two Column Layout */
+    .two-col {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 2rem;
+    }
+
+    /* Problem/Solution */
+    .problem-box {
+      background: #fef3f3;
+      border-left: 4px solid #dc3545;
+      padding: 1.5rem;
+      border-radius: 0 8px 8px 0;
+    }
+
+    .solution-box {
+      background: #f0f9f0;
+      border-left: 4px solid #28a745;
+      padding: 1.5rem;
+      border-radius: 0 8px 8px 0;
+    }
+
+    /* Feature Grid */
+    .feature-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 1.5rem;
+      margin: 1.5rem 0;
+    }
+
+    .feature-card {
+      background: #f8f9fa;
+      padding: 1.5rem;
+      border-radius: 8px;
+      border: 1px solid #e9ecef;
+    }
+
+    .feature-card h4 {
+      font-size: 1.1rem;
+      font-weight: 600;
+      color: #a51c30;
+      margin-bottom: 0.5rem;
+    }
+
+    .feature-card p {
+      font-size: 0.95rem;
+      margin-bottom: 0;
+    }
+
+    /* Source Table */
+    .source-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 1rem 0;
+    }
+
+    .source-table th,
+    .source-table td {
+      padding: 0.8rem 1rem;
+      text-align: left;
+      border-bottom: 1px solid #e9ecef;
+    }
+
+    .source-table th {
+      background: #a51c30;
+      color: #fff;
+      font-weight: 600;
+      font-size: 0.9rem;
+    }
+
+    .source-table td {
+      font-size: 0.95rem;
+    }
+
+    .source-table tr:nth-child(even) {
+      background: #f8f9fa;
+    }
+
+    /* Comparison Table */
+    .comparison-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 1.5rem 0;
+    }
+
+    .comparison-table th,
+    .comparison-table td {
+      padding: 1rem;
+      text-align: left;
+      border: 1px solid #e9ecef;
+    }
+
+    .comparison-table th {
+      background: #1a1a2e;
+      color: #fff;
+      font-weight: 600;
+    }
+
+    .comparison-table th:first-child {
+      background: #f8f9fa;
+      color: #1a1a2e;
+    }
+
+    .comparison-table td:first-child {
+      font-weight: 500;
+      background: #f8f9fa;
+    }
+
+    /* Quote Box */
+    .quote-box {
+      background: linear-gradient(135deg, #a51c30 0%, #6d1220 100%);
+      color: #fff;
+      padding: 2rem;
+      border-radius: 8px;
+      margin: 2rem 0;
+      text-align: center;
+    }
+
+    .quote-box p {
+      font-size: 1.3rem;
+      font-weight: 400;
+      font-style: italic;
+      color: #fff;
+      margin-bottom: 0;
+    }
+
+    /* Roadmap */
+    .roadmap {
+      display: flex;
+      justify-content: space-between;
+      margin: 2rem 0;
+      position: relative;
+    }
+
+    .roadmap::before {
+      content: "";
+      position: absolute;
+      top: 2rem;
+      left: 10%;
+      right: 10%;
+      height: 3px;
+      background: #e9ecef;
+    }
+
+    .roadmap-item {
+      text-align: center;
+      flex: 1;
+      position: relative;
+    }
+
+    .roadmap-dot {
+      width: 20px;
+      height: 20px;
+      background: #a51c30;
+      border-radius: 50%;
+      margin: 0 auto 1rem;
+      position: relative;
+      z-index: 1;
+    }
+
+    .roadmap-item.future .roadmap-dot {
+      background: #ddd;
+      border: 3px solid #a51c30;
+    }
+
+    .roadmap-label {
+      font-size: 0.85rem;
+      font-weight: 600;
+      color: #a51c30;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+
+    .roadmap-desc {
+      font-size: 0.9rem;
+      color: #666;
+      margin-top: 0.3rem;
+    }
+
+    /* CTA */
+    .cta-section {
+      background: #1a1a2e;
+      color: #fff;
+      padding: 3rem;
+      border-radius: 12px;
+      text-align: center;
+      margin-top: 2rem;
+    }
+
+    .cta-section h3 {
+      color: #fff;
+      font-size: 1.8rem;
+      margin-bottom: 1rem;
+    }
+
+    .cta-section p {
+      color: rgba(255,255,255,0.8);
+      font-size: 1.1rem;
+    }
+
+    .cta-section .url {
+      display: inline-block;
+      background: #a51c30;
+      color: #fff;
+      padding: 0.8rem 2rem;
+      border-radius: 6px;
+      font-weight: 600;
+      margin-top: 1rem;
+      text-decoration: none;
+    }
+
+    /* Footer */
+    .page-footer {
+      position: absolute;
+      bottom: 2rem;
+      left: 4rem;
+      right: 4rem;
+      display: flex;
+      justify-content: space-between;
+      font-size: 0.8rem;
+      color: #888;
+      border-top: 1px solid #e9ecef;
+      padding-top: 1rem;
+    }
+
+    @media print {
+      .page {
+        padding: 2rem 2.5rem;
+      }
+      .page-footer {
+        left: 2.5rem;
+        right: 2.5rem;
+      }
+    }
+  </style>
+</head>
+<body>
+
+<!-- Page 1: Cover -->
+<div class="page cover">
+  <h1><strong>Harvard</strong> Startup Intelligence</h1>
+  <p class="tagline">AI-Powered Deal Sourcing for University Ventures</p>
+
+  <div class="highlight-box">
+    <p>We use AI to systematically discover, research, and profile<br>Harvard-affiliated startups before they hit your inbox.</p>
+  </div>
+
+  <div class="stats">
+    <div class="stat">
+      <span class="stat-number">100</span>
+      <span class="stat-label">Startups Profiled</span>
+    </div>
+    <div class="stat">
+      <span class="stat-number">11</span>
+      <span class="stat-label">Source Channels</span>
+    </div>
+    <div class="stat">
+      <span class="stat-number">1</span>
+      <span class="stat-label">AI Engine</span>
+    </div>
+  </div>
+</div>
+
+<!-- Page 2: Problem -->
+<div class="page content-page">
+  <div class="page-header">
+    <h2>The Problem</h2>
+    <div class="page-num">01</div>
+  </div>
+
+  <p class="lead">Every VC wants access to Harvard-affiliated founders. But sourcing them is a nightmare.</p>
+
+  <div class="two-col" style="margin-top: 2rem;">
+    <div class="problem-box">
+      <h3 style="margin-top: 0; color: #dc3545;">Fragmented Ecosystem</h3>
+      <ul>
+        <li>12+ schools with separate programs</li>
+        <li>5 accelerators with different cohorts</li>
+        <li>Dozens of labs and competitions</li>
+        <li>No centralized database exists</li>
+      </ul>
+    </div>
+
+    <div class="problem-box">
+      <h3 style="margin-top: 0; color: #dc3545;">Manual Process</h3>
+      <ul>
+        <li>Scraping LinkedIn profiles</li>
+        <li>Reading press releases</li>
+        <li>Attending demo days</li>
+        <li>Monitoring alumni newsletters</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="quote-box">
+    <p>"By the time you hear about a company through traditional channels, the round is already filling."</p>
+  </div>
+
+  <h3>The Cost of Manual Sourcing</h3>
+  <div class="two-col">
+    <div>
+      <p><span class="highlight">40+ hours</span> per company for thorough research</p>
+      <p><span class="highlight">$80K+</span> per analyst annually</p>
+    </div>
+    <div>
+      <p><span class="highlight">5-10 companies</span> researched per week</p>
+      <p><span class="highlight">Weeks to months</span> to build a pipeline</p>
+    </div>
+  </div>
+
+  <div class="page-footer">
+    <span>Harvard Startup Intelligence</span>
+    <span>Confidential</span>
+  </div>
+</div>
+
+<!-- Page 3: Solution -->
+<div class="page content-page">
+  <div class="page-header">
+    <h2>The Solution</h2>
+    <div class="page-num">02</div>
+  </div>
+
+  <p class="lead">An AI-powered sourcing engine that systematically discovers, researches, and profiles Harvard-affiliated startups — continuously.</p>
+
+  <div class="feature-grid">
+    <div class="feature-card">
+      <h4>1. AI Discovery</h4>
+      <p>Scans accelerator cohorts, innovation lab announcements, competition winners, alumni networks, and funding news to identify new ventures at formation.</p>
+    </div>
+
+    <div class="feature-card">
+      <h4>2. AI Research</h4>
+      <p>For each company found, pulls founder backgrounds, Harvard affiliations, product details, funding history, and competitive landscape.</p>
+    </div>
+
+    <div class="feature-card">
+      <h4>3. AI Analysis</h4>
+      <p>Generates investment-ready profiles with strengths, weaknesses, and tailored due diligence questions for each prospect.</p>
+    </div>
+
+    <div class="feature-card">
+      <h4>4. AI Outreach</h4>
+      <p>Drafts personalized cold emails to founders, ready to send — with context-specific talking points and asks.</p>
+    </div>
+  </div>
+
+  <div class="solution-box" style="margin-top: 1.5rem;">
+    <h3 style="margin-top: 0; color: #28a745;">The Result</h3>
+    <p style="font-size: 1.2rem; margin-bottom: 0;"><strong>100 startups profiled. One AI. No analyst team.</strong></p>
+    <p style="margin-bottom: 0;">What used to take an analyst 40+ hours per company takes the AI minutes.</p>
+  </div>
+
+  <div class="page-footer">
+    <span>Harvard Startup Intelligence</span>
+    <span>Confidential</span>
+  </div>
+</div>
+
+<!-- Page 4: Source Channels -->
+<div class="page content-page">
+  <div class="page-header">
+    <h2>11 Source Channels</h2>
+    <div class="page-num">03</div>
+  </div>
+
+  <p class="lead">We systematically monitor Harvard's entire startup ecosystem across 11 distinct channels.</p>
+
+  <table class="source-table">
+    <thead>
+      <tr>
+        <th>Source Channel</th>
+        <th>Startups</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>Harvard Innovation Labs</td>
+        <td>20</td>
+        <td>Launch Lab X, President's Innovation Challenge winners</td>
+      </tr>
+      <tr>
+        <td>HAE Accelerator</td>
+        <td>11</td>
+        <td>Harvard Alumni Entrepreneurs equity-free accelerator</td>
+      </tr>
+      <tr>
+        <td>Wyss Institute</td>
+        <td>11</td>
+        <td>Biologically-inspired engineering spinouts</td>
+      </tr>
+      <tr>
+        <td>HGSE Alumni</td>
+        <td>8</td>
+        <td>Harvard Graduate School of Education network</td>
+      </tr>
+      <tr>
+        <td>SICI / Social Enterprise</td>
+        <td>7</td>
+        <td>Social Impact & Civic Innovation portfolio</td>
+      </tr>
+      <tr>
+        <td>HBS Alumni</td>
+        <td>6</td>
+        <td>Harvard Business School funding news and alumni</td>
+      </tr>
+      <tr>
+        <td>Harvard Ventures Database</td>
+        <td>6</td>
+        <td>Official Harvard alumni venture database</td>
+      </tr>
+      <tr>
+        <td>Rock Health Portfolio</td>
+        <td>5</td>
+        <td>Digital health accelerator with Harvard ties</td>
+      </tr>
+      <tr>
+        <td>Harvard Chan School</td>
+        <td>5</td>
+        <td>T.H. Chan School of Public Health ventures</td>
+      </tr>
+      <tr>
+        <td>Echoing Green Fellows</td>
+        <td>3</td>
+        <td>Social entrepreneurship fellowship recipients</td>
+      </tr>
+      <tr>
+        <td>Other Sources</td>
+        <td>18</td>
+        <td>Alumni networks, news, competitions, grants</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <div class="page-footer">
+    <span>Harvard Startup Intelligence</span>
+    <span>Confidential</span>
+  </div>
+</div>
+
+<!-- Page 5: Competitive Advantage -->
+<div class="page content-page">
+  <div class="page-header">
+    <h2>Why AI Sourcing Wins</h2>
+    <div class="page-num">04</div>
+  </div>
+
+  <table class="comparison-table">
+    <thead>
+      <tr>
+        <th></th>
+        <th>Traditional Sourcing</th>
+        <th>AI-Powered Sourcing</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>Discovery Method</td>
+        <td>Manual LinkedIn searches</td>
+        <td>Systematic scan of 11+ channels</td>
+      </tr>
+      <tr>
+        <td>Timing</td>
+        <td>Reactive (wait for intros)</td>
+        <td>Proactive (find at formation)</td>
+      </tr>
+      <tr>
+        <td>Volume</td>
+        <td>5-10 companies/week</td>
+        <td>100+ companies profiled</td>
+      </tr>
+      <tr>
+        <td>Outreach</td>
+        <td>Generic templates</td>
+        <td>Personalized emails with context</td>
+      </tr>
+      <tr>
+        <td>Data Format</td>
+        <td>Static spreadsheet</td>
+        <td>Living database, continuously updated</td>
+      </tr>
+      <tr>
+        <td>Cost</td>
+        <td>$80K+ per analyst/year</td>
+        <td>Fraction of analyst cost</td>
+      </tr>
+      <tr>
+        <td>Scalability</td>
+        <td>Linear (more analysts = more cost)</td>
+        <td>Exponential (same AI, more sources)</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <div class="quote-box">
+    <p>"The firms that figure out AI sourcing first will see deals before everyone else."</p>
+  </div>
+
+  <div class="page-footer">
+    <span>Harvard Startup Intelligence</span>
+    <span>Confidential</span>
+  </div>
+</div>
+
+<!-- Page 6: Roadmap -->
+<div class="page content-page">
+  <div class="page-header">
+    <h2>Roadmap</h2>
+    <div class="page-num">05</div>
+  </div>
+
+  <div class="roadmap">
+    <div class="roadmap-item">
+      <div class="roadmap-dot"></div>
+      <div class="roadmap-label">Now</div>
+      <div class="roadmap-desc">100 Harvard startups<br>11 source channels</div>
+    </div>
+    <div class="roadmap-item future">
+      <div class="roadmap-dot"></div>
+      <div class="roadmap-label">Next</div>
+      <div class="roadmap-desc">250+ startups<br>Real-time monitoring</div>
+    </div>
+    <div class="roadmap-item future">
+      <div class="roadmap-dot"></div>
+      <div class="roadmap-label">Future</div>
+      <div class="roadmap-desc">Multi-university<br>MIT, Stanford, Penn</div>
+    </div>
+    <div class="roadmap-item future">
+      <div class="roadmap-dot"></div>
+      <div class="roadmap-label">Vision</div>
+      <div class="roadmap-desc">The definitive source<br>for university deal flow</div>
+    </div>
+  </div>
+
+  <h3>What We're Building</h3>
+  <div class="feature-grid">
+    <div class="feature-card">
+      <h4>Real-Time Alerts</h4>
+      <p>Get notified when new companies emerge from tracked accelerators and programs.</p>
+    </div>
+    <div class="feature-card">
+      <h4>Multi-University Coverage</h4>
+      <p>Expand to MIT, Stanford, Columbia, Penn, and other top startup ecosystems.</p>
+    </div>
+    <div class="feature-card">
+      <h4>Interactive AI Research</h4>
+      <p>Ask follow-up questions about any company and get instant AI-powered research.</p>
+    </div>
+    <div class="feature-card">
+      <h4>CRM Integration</h4>
+      <p>Sync directly with your deal flow tools — Affinity, Airtable, HubSpot, etc.</p>
+    </div>
+  </div>
+
+  <div class="cta-section">
+    <h3>See It Live</h3>
+    <p>Explore the full database of 100 Harvard-affiliated startups with investment-ready profiles.</p>
+    <a href="https://dwin2.github.io/CPsourcing/" class="url">dwin2.github.io/CPsourcing</a>
+  </div>
+
+  <div class="page-footer">
+    <span>Harvard Startup Intelligence</span>
+    <span>Confidential</span>
+  </div>
+</div>
+
+</body>
+</html>
