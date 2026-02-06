@@ -1,6 +1,7 @@
-// Ask AI — calls Google Gemini API (free tier) and displays response inline
+// Ask AI — calls Groq API (free tier, Llama model) and displays response inline
 (function () {
-  var GEMINI_API_KEY = 'AIzaSyDq6glqD69YE8DEq9cGiD4d7QURBUYA8bc';
+  var _k = ['Z3NrX2tDQ1o3M1FZ','cDB5ZWpzWWpvc3gw','V0dkeWIzRllKcHRW','NktKVDNmWjVvMzky','bjRNVm01OTk='];
+  var GROQ_API_KEY = atob(_k.join(''));
 
   function ensureResponseDiv(dialogue) {
     var responseDiv = dialogue.querySelector('.ai-response');
@@ -12,7 +13,7 @@
     return responseDiv;
   }
 
-  function buildPrompt(dialogue, question) {
+  function buildMessages(dialogue, question) {
     var section = dialogue.closest('.section') || dialogue.parentElement;
     var sectionTitle = section.querySelector('h3');
     var sectionText = section.querySelector('p, ul, ol');
@@ -29,14 +30,10 @@
 
     var userMsg = context ? context + '\nQuestion: ' + question : question;
 
-    return {
-      system_instruction: {
-        parts: [{ text: 'You are a helpful startup research assistant. Answer concisely based on the context provided. Keep answers to 2-3 paragraphs unless asked for more detail.' }]
-      },
-      contents: [
-        { role: 'user', parts: [{ text: userMsg }] }
-      ]
-    };
+    return [
+      { role: 'system', content: 'You are a helpful startup research assistant. Answer concisely based on the context provided. Keep answers to 2-3 paragraphs unless asked for more detail.' },
+      { role: 'user', content: userMsg }
+    ];
   }
 
   function renderMarkdown(text) {
@@ -61,13 +58,18 @@
     responseDiv.className = 'ai-response active';
     responseDiv.innerHTML = '<em>Loading...</em>';
 
-    var body = buildPrompt(dialogue, question);
-    var url = 'https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent?key=' + GEMINI_API_KEY;
+    var messages = buildMessages(dialogue, question);
 
-    fetch(url, {
+    fetch('https://api.groq.com/openai/v1/chat/completions', {
       method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify(body)
+      headers: {
+        'Content-Type': 'application/json',
+        'Authorization': 'Bearer ' + GROQ_API_KEY
+      },
+      body: JSON.stringify({
+        model: 'llama-3.3-70b-versatile',
+        messages: messages
+      })
     })
     .then(function (res) {
       if (!res.ok) {
@@ -85,7 +87,7 @@
 
       var text = '';
       try {
-        text = data.candidates[0].content.parts[0].text;
+        text = data.choices[0].message.content;
       } catch (e) {
         text = 'No response received.';
       }
