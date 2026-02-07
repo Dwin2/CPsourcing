@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Harvard Startup Sourcing — 100 Prospects</title>
+  <title>Harvard Startup Sourcing — 150 Prospects</title>
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
@@ -11,7 +11,7 @@
 <header class="site-header">
   <h1><strong>Harvard</strong> Startup Intelligence</h1>
   <p>AI-Powered Deal Sourcing for Harvard-Affiliated Ventures</p>
-  <span class="subtitle">100 Prospects Across 11 Source Channels, and growing ...</span>
+  <span class="subtitle">150 Prospects Across 11 Source Channels, and growing ...</span>
 </header>
 
 <div class="container">
@@ -45,11 +45,11 @@
       <div class="toggle-row">
         <label class="toggle-item">
           <input type="checkbox" id="include-ilabs" checked>
-          Harvard Innovation Labs (20)
+          Harvard Innovation Labs (33)
         </label>
         <label class="toggle-item">
           <input type="checkbox" id="include-hae" checked>
-          HAE Accelerator (11)
+          HAE Accelerator (12)
         </label>
         <label class="toggle-item">
           <input type="checkbox" id="include-hvd" checked>
@@ -57,11 +57,11 @@
         </label>
         <label class="toggle-item">
           <input type="checkbox" id="include-wyss" checked>
-          Wyss Institute (11)
+          Wyss Institute (27)
         </label>
         <label class="toggle-item">
           <input type="checkbox" id="include-hbsalum" checked>
-          HBS Alumni (6)
+          HBS Alumni (22)
         </label>
         <label class="toggle-item">
           <input type="checkbox" id="include-hgsealum" checked>
@@ -81,11 +81,11 @@
         </label>
         <label class="toggle-item">
           <input type="checkbox" id="include-hsph" checked>
-          Harvard Chan School (5)
+          Harvard Chan School (7)
         </label>
         <label class="toggle-item">
           <input type="checkbox" id="include-other" checked>
-          Other Sources (18)
+          Other Sources (20)
         </label>
       </div>
     </div>
@@ -102,7 +102,7 @@
 </div><!-- /container -->
 
 <footer style="text-align:center; padding:2rem; background:#1c1c1c; color:#888; font-size:.8rem; margin-top:3rem;">
-  Harvard-Affiliated Startup Research &bull; 100 Prospects
+  Harvard-Affiliated Startup Research &bull; 150 Prospects
 </footer>
 
 <script>
@@ -212,7 +212,59 @@ const prospects = [
   { id: 97, name: "Vaxess Technologies", founder: "Harvard PIC Winner", affiliation: "Harvard Innovation Labs", source: "President's Innovation Challenge", sourceKey: "ilabs", category: "health", summary: "Thermostable vaccine delivery using silk protein technology.", stage: "Series A • $8M+", link: "97-vaxess-technologies.html" },
   { id: 98, name: "Kick Health", founder: "Harvard/Stanford/Yale Partners", affiliation: "Harvard Psychiatry Partners", source: "Mental Health Tech", sourceKey: "other", category: "health", summary: "Telemedicine for performance anxiety and sleep issues.", stage: "Seed Stage", link: "98-kick-health.html" },
   { id: 99, name: "Poppyseed Health", founder: "Halle Tecco Portfolio", affiliation: "Harvard Business School Network", source: "Women's Health Portfolio", sourceKey: "other", category: "health", summary: "24/7 nurse support for pregnancy and postpartum via text.", stage: "Seed Stage", link: "99-poppyseed-health.html" },
-  { id: 100, name: "Tia", founder: "Carolyn Witte", affiliation: "Harvard Network", source: "Women's Health Leaders", sourceKey: "other", category: "health", summary: "Modern women's healthcare clinics combining virtual and in-person care.", stage: "Series B • $100M+", link: "100-tia.html" }
+  { id: 100, name: "Tia", founder: "Carolyn Witte", affiliation: "Harvard Network", source: "Women's Health Leaders", sourceKey: "other", category: "health", summary: "Modern women's healthcare clinics combining virtual and in-person care.", stage: "Series B • $100M+", link: "100-tia.html" },
+
+  // New prospects 101-150 (Harvard-affiliated startups)
+  { id: 101, name: "Crop Diagnostix", founder: "Brandon Chi", affiliation: "Harvard Business School '24", source: "HBS New Venture Competition", sourceKey: "hbsalum", category: "other", summary: "AI-powered precision agriculture using gene expression technology to predict crop yield and plant stress.", stage: "Series A • $3.5M", link: "101-crop-diagnostix.html" },
+  { id: 102, name: "Argus Systems", founder: "Lisa Yan & Drew Borinstein", affiliation: "Harvard Business School '25", source: "HBS New Venture Competition", sourceKey: "hbsalum", category: "other", summary: "Accelerates AI model development for physical AI by scaling training data for robotics and autonomous systems.", stage: "Pre-Seed • $75K NVC Winner", link: "102-argus-systems.html" },
+  { id: 103, name: "Halo Braid", founder: "Yinka Ogunbiyi & David Afolabi", affiliation: "Harvard Business School '23", source: "HBS NVC / President's Innovation Challenge", sourceKey: "ilabs", category: "other", summary: "World's first automated hair-braiding robot reducing braiding time from 6 hours to 30 minutes.", stage: "Pre-Seed • $1M+ in prizes", link: "103-halo-braid.html" },
+  { id: 104, name: "M7 Health", founder: "Ilana Springer Borkenstein & Eric Gruskin", affiliation: "Harvard Business School '22", source: "HBS Alumni Success", sourceKey: "hbsalum", category: "health", summary: "Operations software modernizing nursing workforce management across 60+ hospitals.", stage: "Series A • $17M", link: "104-m7-health.html" },
+  { id: 105, name: "DoriVac", founder: "Kevin Emancipator & Claire Zeng", affiliation: "Harvard Business School '23 / Wyss Institute", source: "HBS NVC / Wyss Institute", sourceKey: "wyss", category: "health", summary: "DNA nanoparticle-based cancer immunotherapy teaching immune systems to fight cancer.", stage: "Early Stage • Wyss Validation", link: "105-dorivac.html" },
+  { id: 106, name: "Solara", founder: "Rea Savla & Vishesh Mehta", affiliation: "Harvard Business School '24", source: "HBS New Venture Competition", sourceKey: "hbsalum", category: "other", summary: "On-demand solar irrigation service for Indian farmers reducing costs by 25% and eliminating CO2.", stage: "Pre-Seed • $75K NVC Winner", link: "106-solara.html" },
+  { id: 107, name: "La Huerta de Elisa", founder: "Rosalino Molina", affiliation: "Harvard Business School '22", source: "HBS New Venture Competition", sourceKey: "hbsalum", category: "health", summary: "Mexico's first all-natural baby food company using local ingredients like mango and avocado.", stage: "Seed • $100K+ NVC Winner", link: "107-elisa.html" },
+  { id: 108, name: "Noolie", founder: "Claire Wu & Andrew Setiawan", affiliation: "Harvard Business School '23", source: "HBS New Venture Competition", sourceKey: "hbsalum", category: "health", summary: "Nutritional supplements for children in snack form addressing malnutrition in Southeast Asia.", stage: "Pre-Seed • $75K NVC Winner", link: "108-noolie.html" },
+  { id: 109, name: "SeaCycle", founder: "Hande Ilhan & Jakob Spiess", affiliation: "Harvard Business School '25", source: "HBS New Venture Competition", sourceKey: "hbsalum", category: "other", summary: "Transforms seafood waste into eco-friendly biopolymers for pharmaceutical and medical applications.", stage: "Early Stage • NVC Finalist", link: "109-seacycle.html" },
+  { id: 110, name: "Aidra Health", founder: "Ejiro Maroh & David Bunn", affiliation: "Harvard Business School '26", source: "HBS New Venture Competition", sourceKey: "hbsalum", category: "health", summary: "Africa's first medical equipment-sharing marketplace bridging gaps in hospital access.", stage: "Pre-Seed • $25K NVC Runner-Up", link: "110-aidra-health.html" },
+  { id: 111, name: "Harken Sweets", founder: "Katie Lefkowitz", affiliation: "Harvard Business School '16", source: "HBS Alumni Success", sourceKey: "hbsalum", category: "other", summary: "Plant-based, sugar-free candy bars with superfood ingredients in 4,000+ stores including Walmart.", stage: "Bootstrapped • 4K+ stores", link: "111-harken-sweets.html" },
+  { id: 112, name: "Tilden", founder: "Mariah Hilton Wood & Vanessa Royle", affiliation: "Harvard Business School '22", source: "HBS New Venture Competition", sourceKey: "hbsalum", category: "other", summary: "Sophisticated ready-to-pour non-alcoholic cocktails from natural, plant-based ingredients.", stage: "Commercial • NVC Winner", link: "112-tilden.html" },
+  { id: 113, name: "Hue", founder: "Janvi Shah, Nicole Clay & Sylvan Guo", affiliation: "Harvard Business School '22", source: "HBS Alumni Funding", sourceKey: "hbsalum", category: "other", summary: "AI-powered platform embedding shoppable user-generated videos on e-commerce beauty websites.", stage: "Seed • $4.5M", link: "113-hue.html" },
+  { id: 114, name: "TestParty", founder: "Michael Bervell & Jason Tan", affiliation: "Harvard Business School '24", source: "HBS Alumni Funding", sourceKey: "hbsalum", category: "other", summary: "AI-enabled digital accessibility platform automatically rewriting code for ADA compliance.", stage: "Seed • $4M", link: "114-testparty.html" },
+  { id: 115, name: "Sanso", founder: "Narek Dshkhunyan & Daniel Erdosy", affiliation: "Harvard Business School '24", source: "HBS New Venture Competition", sourceKey: "hbsalum", category: "health", summary: "Microporous water technology helping pharmaceutical manufacturers produce biologics more efficiently.", stage: "Early Stage • $25K NVC", link: "115-sanso.html" },
+  { id: 116, name: "Earthbond", founder: "Chidalu Onyenso", affiliation: "Harvard Business School '23", source: "HBS Alumni Funding", sourceKey: "hbsalum", category: "other", summary: "Clean energy financing helping Nigerian SMEs switch from diesel to affordable solar energy.", stage: "Pre-Seed • $200K", link: "116-earthbond.html" },
+  { id: 117, name: "Fluency", founder: "Hiro Yamada & Mark Andrew Yao", affiliation: "Harvard Business School '23", source: "HBS New Venture Competition", sourceKey: "hbsalum", category: "education", summary: "Enterprise AI speaking coach for non-native English speakers analyzing spoken English during calls.", stage: "Early Stage", link: "117-fluency.html" },
+  { id: 118, name: "Poka Labs", founder: "Malay Shah & Andrew Bass", affiliation: "Harvard Business School '24", source: "Y Combinator / HBS", sourceKey: "hbsalum", category: "other", summary: "Cloud-based AI platform automating production scheduling in chemical manufacturing.", stage: "Y Combinator", link: "118-poka-labs.html" },
+  { id: 119, name: "IAMBIC", founder: "Maeve Wang", affiliation: "Harvard College '11", source: "Harvard Innovation Labs", sourceKey: "ilabs", category: "other", summary: "AI-driven custom sneaker company creating size-inclusive footwear cutting costs by 90%.", stage: "Pre-Seed • $1.5M + NSF grant", link: "119-iambic.html" },
+  { id: 120, name: "NetaCarbon", founder: "Grace Lam & Mar Velasco", affiliation: "Harvard Kennedy School / HBS '24", source: "Harvard Innovation Labs", sourceKey: "ilabs", category: "other", summary: "Climate tech startup democratizing carbon market access - TurboTax for carbon credits.", stage: "Early Stage • Forbes 30U30", link: "120-netacarbon.html" },
+  { id: 121, name: "Pacto Medical", founder: "Ian Speers", affiliation: "Harvard T.H. Chan SPH '22", source: "Harvard Innovation Labs", sourceKey: "ilabs", category: "health", summary: "Collapsible prefilled syringe with 40% smaller packaging reducing shipping costs.", stage: "Pre-Seed • WHO Innovation Champion", link: "121-pacto-medical.html" },
+  { id: 122, name: "Civic Roundtable", founder: "Austin Boral & Madeleine Smith", affiliation: "Harvard Kennedy School / HBS '23", source: "Harvard Innovation Labs", sourceKey: "ilabs", category: "other", summary: "Government operations platform connecting 22M+ state and local public servants.", stage: "Seed • $5M", link: "122-civic-roundtable.html" },
+  { id: 123, name: "NeuronSpike Technologies", founder: "Dovran Amanov", affiliation: "Harvard (Master's)", source: "Harvard Innovation Labs", sourceKey: "ilabs", category: "other", summary: "Brain-inspired AI chipsets for generative AI offering 21x faster speed than existing processors.", stage: "Pre-Seed • $1.5M", link: "123-neuronspike.html" },
+  { id: 124, name: "Adaptive Reader", founder: "Ethan Pierce", affiliation: "Harvard University", source: "President's Innovation Challenge", sourceKey: "ilabs", category: "education", summary: "AI platform adapting classic literature into multiple languages and reading levels for struggling readers.", stage: "Pre-Seed • 150+ schools", link: "124-adaptive-reader.html" },
+  { id: 125, name: "Vocadian", founder: "Amelia Eginton & Yujie Wang", affiliation: "Harvard Business School / SEAS", source: "Harvard Alumni Entrepreneurs", sourceKey: "hae", category: "health", summary: "Voice AI platform predicting fatigue risk in real-time using 30-second speech samples.", stage: "Early Stage • MIT $100K Winner", link: "125-vocadian.html" },
+  { id: 126, name: "Growbie", founder: "Jashin Lin", affiliation: "Harvard Business School '23", source: "Harvard Innovation Labs", sourceKey: "ilabs", category: "education", summary: "Career development platform for international students with 10-day networking bootcamp.", stage: "Early Stage • Student Founder of Year", link: "126-growbie.html" },
+  { id: 127, name: "Kauna", founder: "Dr. Collins Oghor", affiliation: "Harvard T.H. Chan SPH (MPH)", source: "Harvard Innovation Labs", sourceKey: "hsph", category: "health", summary: "Population health management platform for chronic kidney disease and value-based care.", stage: "Early Stage", link: "127-kauna.html" },
+  { id: 128, name: "FIND Neuro", founder: "Noam Peled", affiliation: "Harvard Medical School", source: "Harvard Innovation Labs", sourceKey: "ilabs", category: "health", summary: "FDA-path clinical decision support platform mapping brain seizure networks for epilepsy surgery.", stage: "Early Stage • FDA pathway", link: "128-find-neuro.html" },
+  { id: 129, name: "MonitAir", founder: "Ricardo De Armas & Edward Mezerhane", affiliation: "Harvard Business School / HMS", source: "Harvard Innovation Labs", sourceKey: "ilabs", category: "health", summary: "HIPAA-compliant platform combining remote patient monitoring and telemedicine for sleep conditions.", stage: "Early Stage", link: "129-monitair.html" },
+  { id: 130, name: "Polis", founder: "Michael Tworek, PhD", affiliation: "Harvard Griffin GSAS", source: "Harvard Innovation Labs", sourceKey: "ilabs", category: "education", summary: "Data-driven 1:1 virtual advising resources helping universities reduce student attrition.", stage: "Early Stage", link: "130-polis.html" },
+  { id: 131, name: "SeeAir", founder: "Piers MacNaughton, ScD", affiliation: "Harvard T.H. Chan SPH '16", source: "Harvard Innovation Labs", sourceKey: "hsph", category: "other", summary: "AI-powered smartphone home assessment tools for residential decarbonization.", stage: "Early Stage • MassSave Partner", link: "131-seeair.html" },
+  { id: 132, name: "eGenesis", founder: "George Church & Luhan Yang", affiliation: "Wyss Institute / Harvard Medical School", source: "Wyss Institute Spinout", sourceKey: "wyss", category: "health", summary: "CRISPR-engineered pig organs for human transplantation - first successful pig kidney transplants.", stage: "Series D • $191M", link: "132-egenesis.html" },
+  { id: 133, name: "Sherlock Biosciences", founder: "James Collins & David Walt", affiliation: "Wyss Institute / Broad Institute", source: "Wyss Institute Spinout", sourceKey: "wyss", category: "health", summary: "CRISPR-based molecular diagnostics - first FDA authorization for CRISPR diagnostic technology.", stage: "Series B • $80M", link: "133-sherlock-biosciences.html" },
+  { id: 134, name: "Torus Biosystems", founder: "Peng Yin & David Zhang", affiliation: "Wyss Institute", source: "Wyss Institute Spinout", sourceKey: "wyss", category: "health", summary: "Rapid point-of-care infectious disease diagnostics with sample-to-result in under 30 minutes.", stage: "Series A • $25M", link: "134-torus-biosystems.html" },
+  { id: 135, name: "EnPlusOne Biosciences", founder: "George Church & Daniel Wiegand", affiliation: "Wyss Institute / HMS", source: "Wyss Institute Spinout", sourceKey: "wyss", category: "health", summary: "Enzymatic RNA synthesis platform for therapeutics, vaccines, and gene-editing applications.", stage: "Seed • $12M", link: "135-enplusone.html" },
+  { id: 136, name: "Manifold Bio", founder: "George Church & Gleb Kuznetsov", affiliation: "Wyss Institute / HMS", source: "Wyss Institute Spinout", sourceKey: "wyss", category: "health", summary: "Protein barcoding technology enabling rapid multiplexed testing of protein drugs in vivo.", stage: "Series A • $40M", link: "136-manifold-bio.html" },
+  { id: 137, name: "Spear Bio", founder: "Peng Yin & Feng Xuan", affiliation: "Wyss Institute", source: "Wyss Institute Spinout", sourceKey: "wyss", category: "health", summary: "Ultrasensitive protein biomarker detection - FDA Breakthrough Device for Alzheimer's pTau 217 test.", stage: "Seed Prime • Oversubscribed", link: "137-spear-bio.html" },
+  { id: 138, name: "Tender Food", founder: "Kevin Kit Parker & Christophe Chantre", affiliation: "Wyss Institute / Harvard SEAS", source: "Wyss Institute Spinout", sourceKey: "wyss", category: "other", summary: "Plant-based alternative meats with realistic whole-muscle texture using nanofiber-spinning technology.", stage: "Seed • $12M", link: "138-tender-food.html" },
+  { id: 139, name: "Verve Motion", founder: "Ignacio Galiana & Conor Walsh", affiliation: "Wyss Institute", source: "Wyss Institute Spinout", sourceKey: "wyss", category: "other", summary: "SafeLift exosuit reducing 30-40% of back strain for industrial workers preventing injuries.", stage: "Series A • $40M total", link: "139-verve-motion.html" },
+  { id: 140, name: "i2O Therapeutics", founder: "Samir Mitragotri", affiliation: "Wyss Institute / Harvard SEAS", source: "Wyss Institute Spinout", sourceKey: "wyss", category: "health", summary: "Oral formulations for injectable biologics like insulin using ionic liquid technology.", stage: "Seed • $4M (Sanofi/JDRF)", link: "140-i2o-therapeutics.html" },
+  { id: 141, name: "64x Bio", founder: "Lex Rovner & George Church", affiliation: "Wyss Institute / HMS", source: "Wyss Institute Spinout", sourceKey: "wyss", category: "health", summary: "Optimized cell lines for manufacturing viral vectors in cell and gene therapies.", stage: "Series A • $55M", link: "141-64x-bio.html" },
+  { id: 142, name: "GC Therapeutics", founder: "Parastoo Khoshakhlagh & George Church", affiliation: "Wyss Institute / HMS", source: "Wyss Institute Spinout", sourceKey: "wyss", category: "health", summary: "Off-the-shelf iPSC-derived cell therapies using TFome stem cell programming platform.", stage: "Series A • $75M", link: "142-gc-therapeutics.html" },
+  { id: 143, name: "Imago Rehab", founder: "Chrissy Glover & Kristin Nuckols", affiliation: "Wyss Institute", source: "Wyss Institute / President's Innovation Challenge", sourceKey: "wyss", category: "health", summary: "Soft robotic glove for at-home stroke rehabilitation integrating telehealth solutions.", stage: "Pre-Seed • $25K PIC", link: "143-imago-rehab.html" },
+  { id: 144, name: "Metalmark", founder: "Joanna Aizenberg & Sissi Liu", affiliation: "Wyss Institute", source: "Wyss Institute Spinout", sourceKey: "wyss", category: "other", summary: "Butterfly-wing-inspired nano-coatings for affordable air purification neutralizing viruses.", stage: "Pre-Seed • NSF/NIH grants", link: "144-metalmark.html" },
+  { id: 145, name: "Prapela", founder: "John Konsin & James Niemi", affiliation: "Wyss Institute", source: "Wyss Institute Spinout", sourceKey: "wyss", category: "health", summary: "Vibrating mattress pad stabilizing infant breathing and treating neonatal opioid withdrawal.", stage: "Pre-Seed • FDA De Novo 2025", link: "145-prapela.html" },
+  { id: 146, name: "Breaking", founder: "Donald Ingber & George Church", affiliation: "Wyss Institute / HMS", source: "Wyss Institute Spinout", sourceKey: "wyss", category: "other", summary: "Plastic-eating microbes degrading 90% of multiple plastic types in 22 months.", stage: "Seed • $10.5M", link: "146-breaking.html" },
+  { id: 147, name: "Pika Labs", founder: "Demi Guo", affiliation: "Harvard College '21", source: "Harvard Alumni Success", sourceKey: "other", category: "other", summary: "AI-powered idea-to-video platform transforming creativity into motion for content creators.", stage: "Series A • $135M ($470M val)", link: "147-pika-labs.html" },
+  { id: 148, name: "Decagon", founder: "Jesse Zhang", affiliation: "Harvard College (CS)", source: "Harvard Alumni Success", sourceKey: "other", category: "other", summary: "Generative AI agents for enterprise customer support automating service interactions.", stage: "Series D • $4.5B valuation", link: "148-decagon.html" },
+  { id: 149, name: "Overjet", founder: "Wardah Inam", affiliation: "Harvard Innovation Labs", source: "President's Innovation Challenge", sourceKey: "ilabs", category: "health", summary: "First FDA-cleared dental AI analyzing X-rays to help dentists diagnose diseases.", stage: "Series C • $133M ($550M val)", link: "149-overjet.html" },
+  { id: 150, name: "Holly", founder: "Cherie Chung & Brendan Hellweg", affiliation: "Harvard Business School / HKS '24", source: "Harvard Innovation Labs", sourceKey: "ilabs", category: "other", summary: "AI platform helping public sector organizations recruit and retain employees.", stage: "Seed • $2.2M", link: "150-holly.html" }
 ];
 
 // State
